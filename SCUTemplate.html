@@ -27,34 +27,34 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-TileImage" content="/assets/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  
+
 	<link rel="canonical" href="https://www.scu.edu/search/">
-  
-  
-  
+
+
+
   <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" async></script>
   <![endif]-->
-  
+
   <!-- external styles -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
   <!-- /external styles -->
-  
+
   <!-- toolkit styles -->
   <link rel="stylesheet" href="https://www.scu.edu/assets/public/scu.css" />
   <link href="/media/scuedu/style-assets/stylesheets/f.css" rel="stylesheet">
   <!-- /toolkit styles -->
-  
+
   <script src="https://www.scu.edu/assets/public/scu.js"></script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
 </head>
 <body class="sitemain ">
   <!-- Google Tag Manager -->
@@ -206,31 +206,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </form>
         <div class="collapse navbar-collapse bg-primary" id="navbarBrandList">
           <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
-            
+
             <li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="/aboutscu/">Home</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="/academics/">Create Listing</a>
 			</li>
+      <li class="nav-item">
+				<a class="nav-link text-white text-uppercase px-3" href="/admission/">About</a>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="/admission/">Administrator</a>
 			</li>
-            <li class="nav-item d-lg-none">
+            <!-- <li class="nav-item d-lg-none">
               <a class="nav-link text-white text-uppercase px-3" href="https://www.scu.edu/services/">Offices &amp; Services</a>
             </li>
             <li class="nav-item d-lg-none">
               <a class="nav-link text-white text-uppercase px-3" href="https://www.scu.edu/centers/">Schools &amp; Centers</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
     </nav>
   </header>
-  
-  
-  
-  
+
+
+
+
 <div class="subheader py-4 pt-lg-5 pb-md-4 mb-4 bg-dark">
 	<div class="container">
 		<div class="row">
@@ -246,17 +249,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		$("header").removeClass("mb-md-5");
 	});
 </script>
-  
-  
-  
+
+
+
   <div class="container" id="content">
     <h1 class="text-sans-light" id="page-title">Search</h1>
     <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item">Search  </li>
 </ol>
   	<div class="row">
-    	<div class="col-sm-8">  
-        
+    	<div class="col-sm-8">
+
 <form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
 <div class="input-group">
 <label for="searchq" class="sr-only">Search</label>
@@ -306,26 +309,26 @@ function doSearch() {
 	}
 
     var decodedstring = decodeURIComponent(querystring);
-		
+
 	$('input[name="q"]').val(decodedstring);
-    
-    if (querystring.length > 0) { 
+
+    if (querystring.length > 0) {
     	var resultsHeading = '<h2 class="search_title">You searched for <span>' + querystring + '</span></h2>';
         $('h1.page-title').replaceWith(function() { return resultsHeading; });
     }
-		  
+
 	return false;
-} 
-		
+}
+
 
 function getUrlParameter(sParam)
 {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
+    for (var i = 0; i < sURLVariables.length; i++)
     {
         var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
+        if (sParameterName[0] == sParam)
         {
             return sParameterName[1];
         }
@@ -335,14 +338,14 @@ function getUrlParameter(sParam)
 function urldecode(str) {
   return decodeURIComponent(str.replace(/\+/g, ' '));
 }
-		
+
 $(document).ready(function(){
   doSearch();
 });
 
 </script>
 
-  
+
 <style>
 
 .gsc-control-cse {
@@ -460,9 +463,9 @@ table.gsc-search-box td
 
 </style>
 <script>
-	$(document).ready(function() { 
+	$(document).ready(function() {
     	$('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').addClass('sr-only');
-    	
+
     });
 </script>
 
@@ -474,10 +477,10 @@ table.gsc-search-box td
 
        <div class="row">
           <div class="col-md-6">
-            
+
           </div>
           <div class="col-md-6">
-            
+
           </div>
         </div>
          <div class="pull-right"></div>
@@ -485,7 +488,7 @@ table.gsc-search-box td
         <div class="col-sm-4">
           <nav class="sidebar">
   	        <div class="sidebar-top">
-                
+
 		<p class="h5 sidebar-title pb-3"><a href="/search/" class="link--dropdown d-md-none" data-toggle="collapse" data-target="#sidebarLinks" aria-expanded="false" aria-controls="sidebarLinks">Search<i class="h5 chevron right"></i></a>
 		<a href="/search/" class="d-md-block d-none desktop-title">Search</a></p>
 		<div class="collapse d-md-block" id="sidebarLinks">
@@ -493,7 +496,7 @@ table.gsc-search-box td
 			</ul>
 		</div>
 <script>
-$(document).ready(function() { 
+$(document).ready(function() {
 	if($('.sidebar--links [class*=currentsection]')) { $('.sidebar--links [class*=currentsection]').addClass('active');}//
 	$('.sidebar--links').closest('li').children('a').addClass('text-sans-bold');
 	$('<span class="sr-only">Current Page: </span>').insertBefore('.currentsection');
@@ -502,7 +505,7 @@ $(document).ready(function() {
 
             </div>
           </nav>
-            
+
 	<!-- <div class="card my-3">
 		<div class="card-block card-body">
 			<h4 class="card-title">Looking for a person or office?</h4>
@@ -517,17 +520,17 @@ $(document).ready(function() {
 			<div><a class="btn btn-primary" href="/map/">Campus Map</a></div>
 		</div>
 	</div> --><script>
-	$(document).ready(function() { 
+	$(document).ready(function() {
     	$('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
-    	
+
     });
 </script>
-            
-        </div>    
+
+        </div>
        </div>
     </div>
-   
-    
+
+
 <footer class="footer-core border-top bg-white pt-4 footer-core">
 	<div class="container">
 		<a href="/" class="h4 text-dark text-uppercase wordmark d-block mb-4">Santa Clara University</a>
@@ -587,22 +590,22 @@ $(document).ready(function() {
 	</div>
 	<p class="bg-gradient-primary mb-0 mt-4 p-3 small text-center">&copy; 2018 Santa Clara University</p>
 </footer>
-    <script> $(document).ready(function() { 								
-		$("#toplink1340").addClass("active"); 			
-		$("#toplink1127").addClass("active"); 			
-});</script>															
+    <script> $(document).ready(function() {
+		$("#toplink1340").addClass("active");
+		$("#toplink1127").addClass("active");
+});</script>
 
     <script>
       $(document).ready(function() {
-        if ( $('.accordion-item') ) {   
-            $.getScript( "https://www.scu.edu/assets/scripts/t4/accordion-toolkit.js");     
-        } 
+        if ( $('.accordion-item') ) {
+            $.getScript( "https://www.scu.edu/assets/scripts/t4/accordion-toolkit.js");
+        }
         $( "table" ).addClass( "table" );
       });
     </script>
 
-    
-    
-    
+
+
+
    </body>
-</html> 
+</html>
