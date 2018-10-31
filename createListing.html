@@ -249,7 +249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-  <div class="container" id="content">
+  <!-- <div class="container" id="content">
     <h1 class="text-sans-light" id="page-title">Search</h1>
     <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item">Search  </li>
@@ -262,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <label for="searchq" class="sr-only">Search</label>
 <input type="text" class="form-control py-2" name="q" id="searchq" placeholder="SEARCH">
 <span class="input-group-append"><button class="input-group-text btn btn-light" type="submit" aria-label="Submit"><i class="fas fa-search"></i></button></span>
-</div>
+</div> -->
 <!--
 <label class="radio-inline">
   <input type="radio" name="search-type" id="local_search" value="local" checked="checked" /> Search this site
@@ -472,7 +472,7 @@ table.gsc-search-box td
 
 
 
-       <div class="row">
+        <div class="row">
           <div class="col-md-6">
 
           </div>
@@ -484,7 +484,20 @@ table.gsc-search-box td
         </div>
         <div class="col-sm-4">
           <nav class="sidebar">
-  	        <div class="sidebar-top">
+<form>
+  <label>Name: <input type="text" name="name" /></label> <br/ >
+  <label>Business Name: <input type="text" name="Bname" /></label> <br/ >
+  <label>City: <input type="text" name="loc" /></label> <br/ >
+  <label>Phone #: <input type="text" name="phone" /></label> <br/ >
+  <p>Select all tags that apply to your business:
+    <br />
+    <input type="checkbox" name="businessType" value="automotive" /> automotive
+    <input type="checkbox" name="businessType" value="restaurant" /> restaurant
+    <input type="checkbox" name="businessType" value="retail" /> retail </p>
+    <input type="submit" value="Submit" />
+</form>
+
+<!-- <div class="sidebar-top">
 
 		<p class="h5 sidebar-title pb-3"><a href="/search/" class="link--dropdown d-md-none" data-toggle="collapse" data-target="#sidebarLinks" aria-expanded="false" aria-controls="sidebarLinks">Search<i class="h5 chevron right"></i></a>
 		<a href="/search/" class="d-md-block d-none desktop-title">Search</a></p>
@@ -498,7 +511,7 @@ $(document).ready(function() {
 	$('.sidebar--links').closest('li').children('a').addClass('text-sans-bold');
 	$('<span class="sr-only">Current Page: </span>').insertBefore('.currentsection');
 });
-</script>
+</script> -->
 
             </div>
           </nav>

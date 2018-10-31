@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <title>Home - Bronco Directory</title>
+  <title>Administrator - Bronco Directory</title>
   <meta name="description" content="Search the Santa Clara University web site">
 	<meta name="keywords" content="search">
 	<meta name="author" content="Santa Clara University">
@@ -208,13 +208,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
 
             <li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
+				<a class="nav-link text-white text-uppercase px-3" href="adminPending.html">Pending</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="createListing.html">Create Listing</a>
+				<a class="nav-link text-white text-uppercase px-3" href="analytics.html">Analytics</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="adminLogin.html">Administrator</a>
+				<a class="nav-link text-white text-uppercase px-3" href="logout.html">Logout</a>
 			</li>
           </ul>
         </div>
@@ -250,35 +250,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ol>
   	<div class="row">
     	<div class="col-sm-8">
-<form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
+
+<!-- <form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
 <div class="input-group">
 <label for="searchq" class="sr-only">Search</label>
 <input type="text" class="form-control py-2" name="q" id="searchq" placeholder="SEARCH">
 <span class="input-group-append"><button class="input-group-text btn btn-light" type="submit" aria-label="Submit"><i class="fas fa-search"></i></button></span>
-</div>
-
-  <b>Filters:</b><br />
-  type:
-    <select name="businesstype">
-      <option value="all">all</option>
-      <option value="automotive">automotive</option>
-      <option value="restaurant">restaurant</option>
-      <option value="retail">retail</option>
-    </select>
-    city:
-      <select name="city">
-        <option value="all">all</option>
-        <option value="LG">Los Gatos</option>
-        <option value="PA">Palo Alto</option>
-        <option value="SF">San Francisco</option>
-        <option value="SJ">San Jose</option>
-        <option value="SC">Santa Clara</option>
-
-
-
-
-      </select><br />
-
+</div> -->
 <!--
 <label class="radio-inline">
   <input type="radio" name="search-type" id="local_search" value="local" checked="checked" /> Search this site
@@ -287,7 +265,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <input type="radio" name="search-type" id="global_search" value="scu" /> Search the full SCU site
 </label>
 -->
-</form>
+<!-- </form> -->
+
 <script>
   (function() {
     var cx = '015735913753929981099:fyhgumyaibi';
@@ -487,7 +466,7 @@ table.gsc-search-box td
 
 
 
-       <div class="row">
+       <!-- <div class="row">
           <div class="col-md-6">
 
           </div>
@@ -516,26 +495,32 @@ $(document).ready(function() {
 </script>
 
             </div>
-          </nav>
+          </nav> -->
 
-	<div class="card my-3">
+	<!-- <div class="card my-3">
 		<div class="card-block card-body">
 			<h4 class="card-title">This will be the map view</h4>
 			<p class="card-text">A map will be inserted here to show nearby alumni businesses</p>
 			<div><a class="btn btn-primary" href="">MAP</a></div>
 		</div>
 	</div>
-	</div><script>
+	</div> -->
+  <script>
 	$(document).ready(function() {
     	$('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
 
     });
 </script>
 
-        </div>
-       </div>
-    </div>
 
+        <!-- </div>
+       </div>
+    </div> -->
+    <label for="username">Username:</label>
+      <input type="text" name="username" required="required" /></title><br />
+    <label for="password">Password:</label>
+      <input type="password" name="password" required="required" />
+      <input type="submit" value="Submit" />
 
 <footer class="footer-core border-top bg-white pt-4 footer-core">
 	<div class="container">
