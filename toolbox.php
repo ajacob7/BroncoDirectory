@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	 }
 }
+
 function connectToDB(){
   $conn=oci_connect($username,$password, $dbpath);
 	if(!$conn) {
@@ -20,31 +21,31 @@ function searchBar($name){
 	//connect to your database
 	$conn = connectToDB();
 	//	 Parse the SQL query
-	$query = oci_parse($conn, "SELECT businessName FROM Businesses where name= :bv");
+	$query = oci_parse($conn, "SELECT FROM Businesses where name= :bv");
 
 	oci_bind_by_name($query,':bv',$name);
 	// Execute the query
 	oci_execute($query);
 
-	if (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
-		// We can use either numeric indexed starting at 0
-		// or the column name as an associative array index to access the colum value
-		// Use the uppercase column names for the associative array indices
-		echo $row[0] . " and " . $row['SALARY']   . " are the same<br>\n";
-		$salary = $row['SALARY'];
-	}
-	else {
-		echo "No such employee <br>\n";
-	}
+
 	oci_free_statement($query);
 	oci_close($conn);
 
-	return $salary;
+	return;
 }
 
 function viewQueue(){
-  $conn
+  $conn = connectToDB();
+
+  $query = oci_parse($conn, 'SELECT businessName FROM Businesses INNER JOIN Verified ON verified.businessID = businesses.businessID WHERE VERIFIED = 1;')
 }
+
+function createListing(){
+  $conn = connectToDB();
+
+
+}
+
 
 function prepareInput($inputData){
 	// Removes any leading or trailing white space
