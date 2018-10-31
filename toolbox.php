@@ -79,12 +79,9 @@ function viewQueue(){
 	while($row=oci_fetch_array($query)){
 		echo $row
 		}
-	}
 	echo "</b>";
-
 	oci_free_statement($query);
 	OCILogoff($conn);
-
 }
 
 function createListing(){
