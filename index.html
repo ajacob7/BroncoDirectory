@@ -193,7 +193,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 aria-controls="navbarBrandList" aria-expanded="false" aria-label="Toggle navigation">
           <span class="text-uppercase">menu</span>
         </button>
-        <form class="form-inline d-lg-none my-2" action="https://www.scu.edu/search/" method="get">
+        <!-- <form class="form-inline d-lg-none my-2" action="https://www.scu.edu/search/" method="get">
           <div class="input-group">
             <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search" />
             <div class="input-group-append">
@@ -203,7 +203,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </button>
             </div>
           </div>
-        </form>
+        </form> -->
         <div class="collapse navbar-collapse bg-primary" id="navbarBrandList">
           <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
 
@@ -244,18 +244,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <div class="container" id="content">
-    <h1 class="text-sans-light" id="page-title">Search</h1>
+    <!-- <h1 class="text-sans-light" id="page-title">Search</h1>
     <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item">Search  </li>
-</ol>
+</ol> -->
   	<div class="row">
     	<div class="col-sm-8">
-<form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
+<!-- <form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
 <div class="input-group">
 <label for="searchq" class="sr-only">Search</label>
 <input type="text" class="form-control py-2" name="q" id="searchq" placeholder="SEARCH">
 <span class="input-group-append"><button class="input-group-text btn btn-light" type="submit" aria-label="Submit"><i class="fas fa-search"></i></button></span>
-</div>
+</div> -->
+<form class="example" action="toolbox.php">
+  <input type="text" placeholder="Search.." name="search" style="width:500px">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
 
   <b>Filters:</b><br />
   type:
