@@ -250,19 +250,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <div class="container" id="content">
-    <h1 class="text-sans-light" id="page-title">Search</h1>
+    <!-- <h1 class="text-sans-light" id="page-title">Search</h1>
     <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item">Search  </li>
-</ol>
+</ol> -->
   	<div class="row">
     	<div class="col-sm-8">
 
-<form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
+<!-- <form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
 <div class="input-group">
 <label for="searchq" class="sr-only">Search</label>
 <input type="text" class="form-control py-2" name="q" id="searchq" placeholder="SEARCH">
 <span class="input-group-append"><button class="input-group-text btn btn-light" type="submit" aria-label="Submit"><i class="fas fa-search"></i></button></span>
-</div>
+</div> -->
+
+
+<form action="results.html">
+  <input type="text" placeholder="Search.." name="search" style="width:500px">
+  <button type="submit"><i class="fa fa-search"></i></button><br />
+
+  <b>Filters:</b><br />
+  type:
+    <select name="businesstype">
+      <option value="all">all</option>
+      <option value="automotive">automotive</option>
+      <option value="restaurant">restaurant</option>
+      <option value="retail">retail</option>
+    </select>
+    city:
+      <select name="city">
+        <option value="all">all</option>
+        <option value="LG">Los Gatos</option>
+        <option value="PA">Palo Alto</option>
+        <option value="SF">San Francisco</option>
+        <option value="SJ">San Jose</option>
+        <option value="SC">Santa Clara</option>
+
+
+
+
+      </select><br />
 <!--
 <label class="radio-inline">
   <input type="radio" name="search-type" id="local_search" value="local" checked="checked" /> Search this site
