@@ -282,6 +282,11 @@ Pending:
   <label>Enter the business ID that you want to verify and post: <input type="text" name="businessID" /></label> <br/ >
   <input type="submit" value="Verify" />
 </form>
+<?php
+  include 'toolbox.php';
+  include 'databases.php';
+  ();
+?>
 
 
 <script>

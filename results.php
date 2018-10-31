@@ -296,7 +296,7 @@ search results:
 <?php
   include 'toolbox.php';
   include 'databases.php';
-  ();
+  searchBar();
 ?>
 
 <script>
