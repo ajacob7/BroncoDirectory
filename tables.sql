@@ -26,6 +26,7 @@ CREATE TABLE Businesses(
   phoneNo VARCHAR(30),
   --email VARCHAR(30),
   city VARCHAR(30),
+  type VARCHAR(30),
   --website VARCHAR(30),
   CreatedDateTime TIMESTAMP,
   CONSTRAINT businesses_pk Primary Key(businessID),
@@ -37,20 +38,20 @@ CREATE TABLE Verified(
   Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
 );
 
-CREATE TABLE Automotive(
-  BusinessID NUMBER(5),
-  Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
-);
-
-CREATE TABLE Restaurant(
-  businessID NUMBER(5),
-  Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
-);
-
-CREATE TABLE Retail(
-  businessID NUMBER(5),
-  Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
-);
+-- CREATE TABLE Automotive(
+--   BusinessID NUMBER(5),
+--   Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
+-- );
+--
+-- CREATE TABLE Restaurant(
+--   businessID NUMBER(5),
+--   Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
+-- );
+--
+-- CREATE TABLE Retail(
+--   businessID NUMBER(5),
+--   Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
+-- );
 
 Create sequence alumni_sequence start with 1
 increment by 1
@@ -84,17 +85,29 @@ AS
   businessID NUMBER(5) := businesses_sequence.nextval;
 BEGIN
   INSERT INTO ALUMNI VALUES(alumID, alumName, phoneNo, CURRENT_TIMESTAMP);
-  INSERT INTO BUSINESSES VALUES(businessID, busName, alumID, phoneNo, city, CURRENT_TIMESTAMP);
-  -- CASE type
+  INSERT INTO BUSINESSES VALUES(businessID, busName, alumID, phoneNo, city, busType, CURRENT_TIMESTAMP);
+
+  -- CASE busType
   --   WHEN 'Automotive' THEN (INSERT INTO Automotive VALUES(businessID))
   --   WHEN 'Restaurant' THEN (INSERT INTO Restaurant VALUES(businessID))
   --   WHEN 'Retail' THEN (INSERT INTO Retail VALUES(businessID))
   -- END CASE;
 END;
 /
-show errors
+show errors;
 
-EXEC INSERTpro('Henry','Henrys Plumbing','Santa Clara', '(408)123-4567', 'Restaurant');
+-- CREATE OR REPLACE FUNCTION SEARCHpro(busName IN VARCHAR, city in VARCHAR , busType IN VARCHAR)
+-- AS
+--
+-- BEGIN
+--   SELECT businessName, phoneNo FROM Businesses WHERE lower(busname) = lower(businesses.businessName) AND lower(city) = lower(businesses.city) AND lower(busType) = lower(businesses.type);
+-- END;
+-- /
+-- show errors;
+
+EXEC INSERTpro('Henry','Henrys Plumbing','Santa Clara', '(408)123-4567', 'Retail');
+EXEC INSERTpro('Susie','Susies Bakery','Santa Clara', '(408)123-4567', 'Restaurant');
+
 -- INSERT INTO ALUMNI VALUES (alumni_sequence.nextval, 'Henry', '(408)123-4567', CURRENT_TIMESTAMP);
 -- INSERT INTO ALUMNI VALUES (alumni_sequence.nextval, 'Joe', '(408)890-1234', CURRENT_TIMESTAMP);
 -- INSERT INTO ALUMNI VALUES (alumni_sequence.nextval, 'Susie', '(408)567-8901', CURRENT_TIMESTAMP);
