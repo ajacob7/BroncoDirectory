@@ -63,31 +63,28 @@ function getSalaryFromDB($name){
 	return $salary;
 }
 function viewQueue(){
-	$conn=oci_connect($username,$password, $dbpath);
+	$conn=oci_connect('ajacob','BroncoDirectory', '//dbserver.engr.scu.edu/db11g');
 	if(!$conn) {
-			 print "<br> connection failed:";
-				exit;
+	    print "<br> connection failed:";
+	    exit;
 	}
-	//	 Parse the SQL query
-  $query = oci_parse($conn, 'SELECT businessName FROM Businesses INNER JOIN Verified ON verified.businessID = businesses.businessID WHERE VERIFIED = 1 ORDER BY CREATEDDATEANDTIME;')
-	// Execute the query
-	oci_execute($query);
 
+
+	// Parse the SQL query
+	$req = oci_parse($conn, 'SELECT businessID,businessName FROM BUSINESSES INNER JOIN Verified ON verified.businessID = businesses.businessID');
+	// Execute the query
+	oci_execute($req);
 	// Prepare to display results
-	echo "<b>";
-	// Fetch each row. the first column is 0, then 1, etc.
-	while($row=oci_fetch_array($query)){
-		echo $row
-		}
-	echo "</b>";
-	oci_free_statement($query);
+	while (($row = oci_fetch_array($req, OCI_BOTH)) != false) {
+	    // Use the uppercase column names for the associative array indices
+	    echo"<h2>" .$row[0].$row[1]."</h2>\n";
+	}
+	// Log off
 	OCILogoff($conn);
 }
 
 function createListing(){
   $conn = connectToDB();
-
-
 }
 
 
