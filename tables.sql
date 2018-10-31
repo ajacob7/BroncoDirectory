@@ -1,14 +1,14 @@
 CREATE TABLE Alumni(
-  NUMBER(9) alumID,
+  NUMBER(9) alumID Primary Key,
   VARCHAR(20) name,
-  VARCHAR(2) verified,
   VARCHAR(30) email
   VARCHAR(12) phone
+  DATETIME CreatedDateTime
 
 );
 
 CREATE TABLE Businesses(
-  NUMBER(9) businessID,
+  NUMBER(9) businessID Primary Key,
   VARCHAR(30) businessName,
   VARCHAR(30) owner FOREIGN KEY,
   VARCHAR(30) businessPhone,
@@ -21,8 +21,9 @@ CREATE TABLE Businesses(
 );
 
 CREATE TABLE Verified(
-  NUMBER(9) BusinessID FOREIGN KEY,
-  VARCHAR(2) verified
+  NUMBER(9) BusinessID,
+  NUMBER(1) verified,
+  Foreign Key(BusinessID) REFERENCES Businesses
 );
 
 
