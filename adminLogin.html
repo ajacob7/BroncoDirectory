@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <title>Administrator - Bronco Directory</title>
+  <title>Create Listing - Bronco Directory</title>
   <meta name="description" content="Search the Santa Clara University web site">
 	<meta name="keywords" content="search">
 	<meta name="author" content="Santa Clara University">
@@ -216,6 +216,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="adminLogin.html">Administrator</a>
 			</li>
+            <!-- <li class="nav-item d-lg-none">
+              <a class="nav-link text-white text-uppercase px-3" href="https://www.scu.edu/services/">Offices &amp; Services</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link text-white text-uppercase px-3" href="https://www.scu.edu/centers/">Schools &amp; Centers</a>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -243,7 +249,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-  <div class="container" id="content">
+  <!-- <div class="container" id="content">
     <h1 class="text-sans-light" id="page-title">Search</h1>
     <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item">Search  </li>
@@ -251,7 +257,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   	<div class="row">
     	<div class="col-sm-8">
 
-<!-- <form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
+<form role="form" id="sitesearch" name="sitesearch" method="get" action="/search/" onSubmit="doSearch();">
 <div class="input-group">
 <label for="searchq" class="sr-only">Search</label>
 <input type="text" class="form-control py-2" name="q" id="searchq" placeholder="SEARCH">
@@ -265,7 +271,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <input type="radio" name="search-type" id="global_search" value="scu" /> Search the full SCU site
 </label>
 -->
-<!-- </form> -->
+</form>
 
 <script>
   (function() {
@@ -466,7 +472,7 @@ table.gsc-search-box td
 
 
 
-       <!-- <div class="row">
+        <div class="row">
           <div class="col-md-6">
 
           </div>
@@ -478,7 +484,8 @@ table.gsc-search-box td
         </div>
         <div class="col-sm-4">
           <nav class="sidebar">
-  	        <div class="sidebar-top">
+
+<!-- <div class="sidebar-top">
 
 		<p class="h5 sidebar-title pb-3"><a href="/search/" class="link--dropdown d-md-none" data-toggle="collapse" data-target="#sidebarLinks" aria-expanded="false" aria-controls="sidebarLinks">Search<i class="h5 chevron right"></i></a>
 		<a href="/search/" class="d-md-block d-none desktop-title">Search</a></p>
@@ -492,35 +499,41 @@ $(document).ready(function() {
 	$('.sidebar--links').closest('li').children('a').addClass('text-sans-bold');
 	$('<span class="sr-only">Current Page: </span>').insertBefore('.currentsection');
 });
-</script>
+</script> -->
 
             </div>
-          </nav> -->
+          </nav>
 
 	<!-- <div class="card my-3">
 		<div class="card-block card-body">
-			<h4 class="card-title">This will be the map view</h4>
-			<p class="card-text">A map will be inserted here to show nearby alumni businesses</p>
-			<div><a class="btn btn-primary" href="">MAP</a></div>
+			<h4 class="card-title">Looking for a person or office?</h4>
+			<p class="card-text">The SCU Phonebook includes contact information for organizations, faculty, and staff.</p>
+			<div><a class="btn btn-primary" href="https://phonebook.scu.edu/">SCU Phonebook</a></div>
 		</div>
 	</div>
-	</div> -->
-  <script>
+	<div class="card my-3">
+		<div class="card-block card-body">
+			<h4 class="card-title">Searching for a campus location? </h4>
+			<p class="card-text">Try the SCU Campus Map. The map includes directions to campus, parking information, and locations of buildings and offices.</p>
+			<div><a class="btn btn-primary" href="/map/">Campus Map</a></div>
+		</div>
+	</div> --><script>
 	$(document).ready(function() {
     	$('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
 
     });
 </script>
 
-
-        <!-- </div>
+        </div>
        </div>
-    </div> -->
-    <label for="username">Username:</label>
+    </div>
+
+    <label for="username"> Username: </label>
       <input type="text" name="username" required="required" /></title><br />
-    <label for="password">Password:</label>
+    <label for="password"> Password: </label>
       <input type="password" name="password" required="required" />
       <input type="submit" value="Submit" />
+
 
 <footer class="footer-core border-top bg-white pt-4 footer-core">
 	<div class="container">
@@ -556,7 +569,7 @@ $(document).ready(function() {
 				</ul>
 			<hr class="d-block d-md-none pt-2">
 			</div>
-			<div class="col-12 col-md-3">
+			<!-- <div class="col-12 col-md-3">
 			<ul class="list-unstyled list-spaced">
 <li>
 <h6 class="text-uppercase">Resources</h6>
@@ -576,7 +589,7 @@ $(document).ready(function() {
 <li><a title="Home &raquo; Home &raquo; Event Calendar" href="/events/">Event Calendar</a></li>
 <li><a title="Home &raquo; Home &raquo; News &amp; Events" href="/news-and-events/">News</a></li>
 </ul>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<p class="bg-gradient-primary mb-0 mt-4 p-3 small text-center">&copy; 2018 Santa Clara University</p>
