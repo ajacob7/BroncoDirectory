@@ -1,23 +1,26 @@
+<?php
+//SUPER helpful link
+//https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/11g/r2/prod/appdev/opensrclang/php/php.htm
 include "database.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     # collect input data
-     $empName = $_POST['fname'];
 
-     if (!empty($empName)){
-		$empName = prepareInput($empName);
-		$salary = getSalaryFromDB($empName);
-		echo "Salary: of $empName is $salary <br>";
 	 }
 }
-function getSalaryFromDB($name){
-	//connect to your database
-	$conn=oci_connect('username','password', 'dbpath');
+function connectToDB(){
+  $conn=oci_connect($username,$password, $dbpath);
 	if(!$conn) {
 	     print "<br> connection failed:";
         exit;
 	}
+  return $conn;
+}
+function searchBar($name){
+	//connect to your database
+	$conn = connectToDB();
 	//	 Parse the SQL query
-	$query = oci_parse($conn, "SELECT salary FROM AlphacoEmp where name= :bv");
+	$query = oci_parse($conn, "SELECT businessName FROM Businesses where name= :bv");
 
 	oci_bind_by_name($query,':bv',$name);
 	// Execute the query
@@ -38,6 +41,11 @@ function getSalaryFromDB($name){
 
 	return $salary;
 }
+
+function viewQueue(){
+  $conn
+}
+
 function prepareInput($inputData){
 	// Removes any leading or trailing white space
 	$inputData = trim($inputData);
