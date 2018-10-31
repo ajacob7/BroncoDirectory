@@ -211,10 +211,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
 
             <li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
+				<a class="nav-link text-white text-uppercase px-3" href="index.php">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="createListing.html">Create Listing</a>
+				<a class="nav-link text-white text-uppercase px-3" href="createListing.php">Create Listing</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="adminLogin.html">Administrator</a>
@@ -270,7 +270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div> -->
 
 
-<form method="Post" action="results.html">
+<form method="Post" action="results.php">
   <input type="search" placeholder="Search.." name="search" style="width:500px">
   <button type="submit" value="search">Search></button><br />
 

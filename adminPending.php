@@ -208,13 +208,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
 
             <li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="adminPending.html">Pending</a>
+				<a class="nav-link text-white text-uppercase px-3" href="adminPending.php">Pending</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="Analytics.html">Analytics</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="index.html">Logout</a>
+				<a class="nav-link text-white text-uppercase px-3" href="index.php">Logout</a>
 			</li>
             <!-- <li class="nav-item d-lg-none">
               <a class="nav-link text-white text-uppercase px-3" href="https://www.scu.edu/services/">Offices &amp; Services</a>
@@ -272,13 +272,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </label>
 -->
 Pending:
-</*?php
+<?php
   include 'toolbox.php';
   include 'databases.php';
   viewQueue();
-?>*/
+?>
 <br /><br />
-<form action="toolbox.php" method="POST">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
   <label>Enter the business ID that you want to verify and post: <input type="text" name="businessID" /></label> <br/ >
   <input type="submit" value="Verify" />
 </form>
