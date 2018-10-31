@@ -272,12 +272,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </label>
 -->
 Pending:
-<?php
+</*?php
   include 'toolbox.php';
   include 'databases.php';
   viewQueue();
+?>*/
+<br /><br />
+<form action="toolbox.php" method="POST">
+  <label>Enter the business ID that you want to verify and post: <input type="text" name="businessID" /></label> <br/ >
+  <input type="submit" value="Verify" />
+</form>
 
-?>
 
 <script>
   (function() {
