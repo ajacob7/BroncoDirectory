@@ -214,7 +214,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<a class="nav-link text-white text-uppercase px-3" href="Analytics.html">Analytics</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="index.php">Logout</a>
+				<a class="nav-link text-white text-uppercase px-3" href="index.html">Logout</a>
 			</li>
             <!-- <li class="nav-item d-lg-none">
               <a class="nav-link text-white text-uppercase px-3" href="https://www.scu.edu/services/">Offices &amp; Services</a>

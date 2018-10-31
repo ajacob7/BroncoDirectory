@@ -208,7 +208,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
 
             <li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="index.php">Home</a>
+				<a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="createListing.php">Create Listing</a>
@@ -497,6 +497,13 @@ table.gsc-search-box td
     <input type="radio" name="businessType" value="retail" /> retail </p>
     <input type="submit" value="Submit" />
 </form>
+
+<?php
+  include 'toolbox.php';
+  include 'databases.php';
+  createListing();
+?>
+
 
 <!-- <div class="sidebar-top">
 
