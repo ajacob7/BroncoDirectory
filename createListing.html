@@ -485,7 +485,7 @@ table.gsc-search-box td
         <div class="col-sm-4">
           <nav class="sidebar">
 
-<form action="toolbox.php" method="POST">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
   <label>Name: <input type="text" name="Aname" /></label> <br/ >
   <label>Business Name: <input type="text" name="BName" /></label> <br/ >
   <label>City: <input type="text" name="city" /></label> <br/ >
