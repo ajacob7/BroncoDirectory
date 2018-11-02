@@ -295,7 +295,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 search results:
 <?php
   include 'toolbox.php';
+<<<<<<< HEAD
   //include 'databases.php';
+=======
+  include 'databases.php';
+>>>>>>> 9e7e9a5fed1821d1505a018bc83df29625aa3567
   searchBar();
 ?>
 
