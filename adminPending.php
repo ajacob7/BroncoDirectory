@@ -161,16 +161,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav> -->
     <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
       <div class="d-flex align-items-center">
-        <a href="/" class="seal d-none d-lg-inline mr-3">
+        <a href="index.html" class="seal d-none d-lg-inline mr-3">
           <i class="icon-scu"></i>
           <span class="sr-only">Santa Clara University Homepage</span>
         </a>
         <div class="text-center text-md-left">
           <h2 class="text-trajan wordmark m-0">
-            <a href="/" class="text-primary">Santa Clara University</a>
+            <a href="index.html" class="text-primary">Santa Clara University</a>
           </h2>
           <h6 class="text-trajan wordmark m-0">
-            <a href="/" class="text-muted">The Jesuit University in Silicon Valley</a>
+            <a href="index.html" class="text-muted">The Jesuit University in Silicon Valley</a>
           </h6>
         </div>
       </div>
@@ -208,7 +208,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
 
             <li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="adminPending.php">Pending</a>
+				<a class="nav-link text-white text-uppercase px-3" href="adminPending.pmehp">Pending</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="Analytics.html">Analytics</a>
@@ -275,12 +275,13 @@ Pending:
 <?php
   include 'toolbox.php';
   include 'databases.php';
+  verifyListing();
   viewQueue();
 ?>
 <br /><br />
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-  <label>Enter the business ID that you want to verify and post: <input type="text" name="businessID" /></label> <br/ >
-  <input type="submit" value="Verify" />
+  <label>Enter the business ID that you want to verify and post: <input type="number" name="businessID" /></label> <br/ >
+  <input type="submit" name="Verify" value="Verify" />
 </form>
 
 

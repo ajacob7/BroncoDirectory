@@ -161,16 +161,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav> -->
     <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
       <div class="d-flex align-items-center">
-        <a href="/" class="seal d-none d-lg-inline mr-3">
+        <a href="index.html" class="seal d-none d-lg-inline mr-3">
           <i class="icon-scu"></i>
           <span class="sr-only">Santa Clara University Homepage</span>
         </a>
         <div class="text-center text-md-left">
           <h2 class="text-trajan wordmark m-0">
-            <a href="/" class="text-primary">Santa Clara University</a>
+            <a href="index.html" class="text-primary">Santa Clara University</a>
           </h2>
           <h6 class="text-trajan wordmark m-0">
-            <a href="/" class="text-muted">The Jesuit University in Silicon Valley</a>
+            <a href="index.html" class="text-muted">The Jesuit University in Silicon Valley</a>
           </h6>
         </div>
       </div>
@@ -285,18 +285,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     city:
       <select name="city">
         <option value="all">all</option>
-        <option value="LG">Los Gatos</option>
-        <option value="PA">Palo Alto</option>
-        <option value="SF">San Francisco</option>
-        <option value="SJ">San Jose</option>
-        <option value="SC">Santa Clara</option>
+        <option value="Los Gatos">Los Gatos</option>
+        <option value="Palo Alto">Palo Alto</option>
+        <option value="San Francisco">San Francisco</option>
+        <option value="San Jose">San Jose</option>
+        <option value="Santa Clara">Santa Clara</option>
       </select>
 </form><br /><br />
 search results:
 <?php
   include 'toolbox.php';
-  include 'databases.php';
-  ();
+  //include 'databases.php';
+  searchBar();
 ?>
 
 <script>

@@ -161,16 +161,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav> -->
     <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
       <div class="d-flex align-items-center">
-        <a href="/" class="seal d-none d-lg-inline mr-3">
+        <a href="index.html" class="seal d-none d-lg-inline mr-3">
           <i class="icon-scu"></i>
           <span class="sr-only">Santa Clara University Homepage</span>
         </a>
         <div class="text-center text-md-left">
           <h2 class="text-trajan wordmark m-0">
-            <a href="/" class="text-primary">Santa Clara University</a>
+            <a href="index.html" class="text-primary">Santa Clara University</a>
           </h2>
           <h6 class="text-trajan wordmark m-0">
-            <a href="/" class="text-muted">The Jesuit University in Silicon Valley</a>
+            <a href="index.html" class="text-muted">The Jesuit University in Silicon Valley</a>
           </h6>
         </div>
       </div>
@@ -487,10 +487,10 @@ table.gsc-search-box td
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
   <label>Name: <input type="text" name="Aname" /></label> <br/ >
-  <label>Business Name: <input type="text" name="BName" /></label> <br/ >
+  <label>Business Name: <input type="text" name="Bname" /></label> <br/ >
   <label>City: <input type="text" name="city" /></label> <br/ >
   <label>Phone #: <input type="text" name="phone" /></label> <br/ >
-  <p>Select all tags that apply to your business:
+  <p>Select the tag that applies to your business:
     <br />
     <input type="radio" name="businessType" value="automotive" /> automotive
     <input type="radio" name="businessType" value="restaurant" /> restaurant
@@ -500,7 +500,6 @@ table.gsc-search-box td
 
 <?php
   include 'toolbox.php';
-  include 'databases.php';
   createListing();
 ?>
 

@@ -34,7 +34,7 @@ CREATE TABLE Businesses(
 );
 
 CREATE TABLE Verified(
-  BusinessID NUMBER(5),
+  BusinessID NUMBER(5) UNIQUE,
   Foreign Key(BusinessID) REFERENCES Businesses(BusinessID)
 );
 
