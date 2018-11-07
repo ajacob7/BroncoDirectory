@@ -2,15 +2,16 @@
 //SUPER helpful link
 //https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/11g/r2/prod/appdev/opensrclang/php/php.htm
 //include "database.php";
-
-// function connectToDB(){
-//   $conn=oci_connect($username,$password, $dbpath);
-// 	if(!$conn) {
-// 	     print "<br> connection failed:";
-//         exit;
-// 	}
-//   return $conn;
-// }
+  
+function connectToDB(){
+	$cfg = parse_ini_file('setup.ini');
+    $conn=oci_connect($cfg['db_user'], $cfg['db_pass'], $cfg['db_path']);
+    if(!$conn) {
+         print "<br> connection failed:";
+         exit;
+    }
+    return $conn;
+ }
 function searchBar(){
 	//connect to your database
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -28,7 +29,7 @@ function searchBar(){
 	return;
 }
 function searchSQL($fields){
-	$conn=oci_connect('username','password', '//dbserver.engr.scu.edu/db11g');
+	$conn=connectToDB();
 	if(!$conn) {
 	     print "<br> connection failed:";       
         exit;
@@ -91,7 +92,7 @@ function searchSQL($fields){
 }
 
 function viewQueue(){
-	$conn=oci_connect('username','password', '//dbserver.engr.scu.edu/db11g');
+	$conn=connectToDB();
 	if(!$conn) {
 	    print "<br> connection failed:";
 	    exit;
@@ -132,7 +133,7 @@ function createListing(){
 }
 function insertSQL($fields){
 	//connect to your database
-	$conn=oci_connect('username','password', '//dbserver.engr.scu.edu/db11g');
+	$conn=connectToDB();
 	if(!$conn) {
 	     print "<br> connection failed:";       
         exit;
@@ -167,7 +168,7 @@ function verifyListing(){
 }
 function verifySQL($input){
     //connect to your database
-	$conn=oci_connect('username','password', '//dbserver.engr.scu.edu/db11g');
+	$conn=connectToDB();
 	if(!$conn) {
 	     print "<br> connection failed:";       
         exit;
