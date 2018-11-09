@@ -84,13 +84,32 @@ function searchSQL($fields){
 	// Prepare to display results
 	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
 	    // Use the uppercase column names for the associative array indices
-    echo "<br><b>".$row[0].",    ".$row[1].",   ".$row[2].",   ".$row[3]."</b><br>";
+    echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3]."</b><br>";
 	}
 	
     oci_free_statement($query);
 	oci_close($conn);
 }
-
+function viewCurrent(){
+    $conn = connectToDB();
+	if(!$conn) {
+	    print "<br> connection failed:";
+	    exit;
+	}
+	// Parse the SQL query
+	$query = oci_parse($conn, 'SELECT businessID, businessName, phoneNo, city, type FROM VERIFIED NATURAL JOIN Businesses'); 
+	// Execute the query
+	oci_execute($query);
+	// Prepare to display results
+    echo "<br>";
+	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
+	    // Use the uppercase column names for the associative array indices
+        echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3].",".$row[4]."</b><br>";
+	}
+	// Log off
+	OCILogoff($conn);
+    
+}
 function viewQueue(){
 	$conn=connectToDB();
 	if(!$conn) {

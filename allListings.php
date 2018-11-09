@@ -211,7 +211,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<a class="nav-link text-white text-uppercase px-3" href="adminPending.php">Pending</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="Analytics.html">Analytics</a>
+				<a class="nav-link text-white text-uppercase px-3" href="allListings.php">Analytics</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white text-uppercase px-3" href="index.html">Logout</a>
@@ -271,20 +271,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <input type="radio" name="search-type" id="global_search" value="scu" /> Search the full SCU site
 </label>
 -->
-Pending:
+Bronco Businesses:
 <?php
   include 'toolbox.php';
-  include 'databases.php';
-  verifyListing();
-  viewQueue();
+  viewCurrent();
 ?>
-<br /><br />
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-  <label>Enter the business ID that you want to verify and post: <input type="number" name="businessID" /></label> <br/ >
-  <input type="submit" name="Verify" value="Verify" />
-</form>
-
-
+<br><br><br><br><br><br>
 <script>
   (function() {
     var cx = '015735913753929981099:fyhgumyaibi';
