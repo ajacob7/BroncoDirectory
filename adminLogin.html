@@ -527,12 +527,17 @@ $(document).ready(function() {
 </script>
 
 <form action="adminPending.html">
-    <label for="username"> Username: </label>
+    <label class="login" for="username"> Username: </label>
       <input type="text" name="username" required="required" /></title><br />
-    <label for="password"> Password: </label>
+    <label class="login" for="password"> Password: </label>
       <input type="password" name="password" required="required" />
       <input type="submit" value="Submit" />
 </form>
+<style>
+  label[class="login"]{
+    width: 150px;
+  }
+</style>
 </div>
 </div>
 </div>
