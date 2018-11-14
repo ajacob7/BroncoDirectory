@@ -2,7 +2,7 @@
 //SUPER helpful link
 //https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/11g/r2/prod/appdev/opensrclang/php/php.htm
 //include "database.php";
-  
+
 function connectToDB(){
 	$cfg = parse_ini_file('setup.ini');
     $conn=oci_connect($cfg['db_user'], $cfg['db_pass'], $cfg['db_path']);
@@ -31,15 +31,15 @@ function searchBar(){
 function searchSQL($fields){
 	$conn=connectToDB();
 	if(!$conn) {
-	     print "<br> connection failed:";       
+	     print "<br> connection failed:";
         exit;
-	}	
+	}
 	//	 Parse the SQL query
     $first = true;
 
     $search = 'SELECT businessName, phoneNo, city, type FROM Businesses NATURAL JOIN Verified';
-    
-     
+
+
     if($fields[0] != '' OR $fields[1] != 'all' OR $fields[2] != 'all'){
         $search .= ' WHERE ';
         if($fields[0] != ''){
@@ -68,7 +68,7 @@ function searchSQL($fields){
     //}
 
     $query = oci_parse($conn, $search);
-    
+
     if($fields[0] != ''){
 	    oci_bind_by_name($query,':busname',$fields[0]);
     }
@@ -78,7 +78,7 @@ function searchSQL($fields){
     if($fields[2] != 'all'){
 	    oci_bind_by_name($query,':city',$fields[2]);
     }
-    
+
 	// Execute the query
 	oci_execute($query);
 	// Prepare to display results
@@ -86,7 +86,7 @@ function searchSQL($fields){
 	    // Use the uppercase column names for the associative array indices
     echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3]."</b><br>";
 	}
-	
+
     oci_free_statement($query);
 	oci_close($conn);
 }
@@ -97,7 +97,7 @@ function viewCurrent(){
 	    exit;
 	}
 	// Parse the SQL query
-	$query = oci_parse($conn, 'SELECT businessID, businessName, phoneNo, city, type FROM VERIFIED NATURAL JOIN Businesses'); 
+	$query = oci_parse($conn, 'SELECT businessID, businessName, phoneNo, city, type FROM VERIFIED NATURAL JOIN Businesses');
 	// Execute the query
 	oci_execute($query);
 	// Prepare to display results
@@ -108,7 +108,7 @@ function viewCurrent(){
 	}
 	// Log off
 	OCILogoff($conn);
-    
+
 }
 function viewQueue(){
 	$conn=connectToDB();
@@ -117,15 +117,26 @@ function viewQueue(){
 	    exit;
 	}
 	// Parse the SQL query
-	$query = oci_parse($conn, 'SELECT businessID, businessName, phoneNo FROM BUSINESSES MINUS (SELECT businessID, businessName, phoneNo FROM VERIFIED NATURAL JOIN Businesses)'); 
+	$query = oci_parse($conn, 'SELECT businessID, businessName, phoneNo FROM BUSINESSES MINUS (SELECT businessID, businessName, phoneNo FROM VERIFIED NATURAL JOIN Businesses)');
     //INNER JOIN Verified ON verified.businessID = businesses.businessID');
 	// Execute the query
 	oci_execute($query);
+
+  echo "<table border='1'>
+  <tr>
+  <th>ID</th>
+  <th>Business</th>
+  <th>Confirm</th>
+  </tr>";
 	// Prepare to display results
 	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
+    echo "<tr>";
+    echo "<td>" . $row[0] . "</td>";
+    echo "<td>" . $row[1] . "</td>";
+    echo "</tr>";
 	    // Use the uppercase column names for the associative array indices
-    echo "<br><b>".$row[0]."\t".$row[1]."</b><br>";
 	}
+  echo "</table>";
 	// Log off
 	OCILogoff($conn);
 }
@@ -154,12 +165,12 @@ function insertSQL($fields){
 	//connect to your database
 	$conn=connectToDB();
 	if(!$conn) {
-	     print "<br> connection failed:";       
+	     print "<br> connection failed:";
         exit;
-	}	
+	}
 	//	 Parse the SQL query
 	$query = oci_parse($conn, 'BEGIN INSERTpro(:Aname, :Bname, :city, :phone, :businessType);END;');
-	
+
 	oci_bind_by_name($query,':Aname',$fields[0]);
 	oci_bind_by_name($query,':Bname',$fields[1]);
 	oci_bind_by_name($query,':city',$fields[2]);
@@ -171,8 +182,8 @@ function insertSQL($fields){
 	oci_execute($query);
 	oci_free_statement($query);
 	oci_close($conn);
-	
-}		
+
+}
 
 function verifyListing(){
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['Verify'])) {
@@ -189,13 +200,13 @@ function verifySQL($input){
     //connect to your database
 	$conn=connectToDB();
 	if(!$conn) {
-	     print "<br> connection failed:";       
+	     print "<br> connection failed:";
         exit;
-	}	
+	}
 	//	 Parse the SQL query
 	$query = oci_parse($conn, 'INSERT INTO VERIFIED VALUES(TO_NUMBER(:businessID))');
 
-    oci_bind_by_name($query, ':businessID',$input); 
+    oci_bind_by_name($query, ':businessID',$input);
 	// Execute the query
 	oci_execute($query);
 	oci_free_statement($query);
