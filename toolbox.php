@@ -122,21 +122,11 @@ function viewQueue(){
 	// Execute the query
 	oci_execute($query);
 
-  echo "<table border='1'>
-  <tr>
-  <th>ID</th>
-  <th>Business</th>
-  <th>Confirm</th>
-  </tr>";
 	// Prepare to display results
 	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
-    echo "<tr>";
-    echo "<td>" . $row[0] . "</td>";
-    echo "<td>" . $row[1] . "</td>";
-    echo "</tr>";
+    echo "<br><b>".$row[0]."\t".$row[1]."</b><br>";
 	    // Use the uppercase column names for the associative array indices
 	}
-  echo "</table>";
 	// Log off
 	OCILogoff($conn);
 }
