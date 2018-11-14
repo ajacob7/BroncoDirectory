@@ -47,6 +47,8 @@
 
   <script src="https://www.scu.edu/assets/public/scu.js"></script>
 
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+
 
 
 
@@ -258,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div> -->
 <form method="POST" action="results.html">
   <input type="search" placeholder="Enter Business" name="search" style="width:250px">
-  <input type="search" placeholder="Enter ZIP, City or State" name="location" id="location_search" style="width:250px">
+  <input type="text" placeholder="Enter a city" name="location" id="location_search" style="width:250px">
   <button type="submit" value="search">Search</button><br />
 
   <b>Filters:</b><br />
@@ -269,15 +271,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <option value="restaurant">restaurant</option>
       <option value="retail">retail</option>
     </select>
-    city:
-      <select name="city">
-        <option value="all">all</option>
-        <option value="Los Gatos">Los Gatos</option>
-        <option value="Palo Alto">Palo Alto</option>
-        <option value="San Francisco">San Francisco</option>
-        <option value="San Jose">San Jose</option>
-        <option value="Santa Clara">Santa Clara</option>
-      </select><br />
 </form>
 </div>
 
@@ -603,8 +596,14 @@ $(document).ready(function() {
       });
     </script>
 
-
-
+    <script>
+      var options = {
+        types: ['(cities)'],
+        componentRestrictions: {country: "us"}
+      };
+      var input = document.getElementById('location_search');
+      var autocomplete = new google.maps.places.Autocomplete(input, options);
+    </script>
 
    </body>
 </html>
