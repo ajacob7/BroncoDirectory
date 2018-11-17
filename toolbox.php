@@ -40,7 +40,7 @@ function searchSQL($fields){
     $search = 'SELECT businessName, phoneNo, city, type FROM Businesses NATURAL JOIN Verified';
 
 
-    if($fields[0] != '' OR $fields[1] != 'all' OR $fields[2] != 'all'){
+    if($fields[0] != '' OR $fields[1] != 'all' OR $fields[2] != ''){
         $search .= ' WHERE ';
         if($fields[0] != ''){
             $search .= ' lower(:busname) = lower(businesses.businessName)';
@@ -53,7 +53,7 @@ function searchSQL($fields){
             $search .= ' lower(:busType) = lower(businesses.type)';
             $first = false;
         }
-        if($fields[2] != 'all'){
+        if($fields[2] != ''){
             if(!$first){
                 $search .= ' AND';
             }
@@ -75,7 +75,7 @@ function searchSQL($fields){
     if($fields[1] != 'all'){
 	    oci_bind_by_name($query,':busType',$fields[1]);
     }
-    if($fields[2] != 'all'){
+    if($fields[2] != ''){
 	    oci_bind_by_name($query,':city',$fields[2]);
     }
 
@@ -124,7 +124,7 @@ function viewQueue(){
 
 	// Prepare to display results
 	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
-    echo "<br><b>".$row[0]."\t".$row[1]."</b><br>";
+    echo "<br><b>".$row[0]."\t".$row[1]."\t".$row[2]."</b><br>";
 	    // Use the uppercase column names for the associative array indices
 	}
 	// Log off

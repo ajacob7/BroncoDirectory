@@ -270,28 +270,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div> -->
 
 
-<form method="Post" action="results.php">
-  <input type="search" placeholder="Search.." name="search" style="width:500px">
-  <button type="submit" value="search">Search></button><br />
+<form method="POST" action="results.html">
+          <input type="text" placeholder="Enter Business" name="search" style="width:200px;">
+          <input type="text" placeholder="Enter a city" name="city" id="city" style="width:200px">
+          <button type="submit" value="search">Search</button><br />
 
-  <b>Filters:</b><br />
-  type:
-    <select name="businesstype">
-      <option value="all">all</option>
-      <option value="automotive">automotive</option>
-      <option value="restaurant">restaurant</option>
-      <option value="retail">retail</option>
-    </select>
-    city:
-      <select name="city">
-        <option value="all">all</option>
-        <option value="Los Gatos">Los Gatos</option>
-        <option value="Palo Alto">Palo Alto</option>
-        <option value="San Francisco">San Francisco</option>
-        <option value="San Jose">San Jose</option>
-        <option value="Santa Clara">Santa Clara</option>
-      </select>
-</form><br /><br />
+          <b>Filters:</b><br />
+          type:
+            <select name="businesstype" >
+              <option value="all">all</option>
+              <option value="automotive">Automotive</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="retail">Retail</option>
+              <option value="Education">Education</option>
+              <option value="Electronics and telecom">Electronics and telecom</option>
+              <option value="Entertainment and media">Entertainment and media</option>
+              <option value="Financial services and products">Financial services and products.</option>
+              <option value="Food retail and service">Food retail and service</option>
+              <option value="Gifts and flowers">Gifts and flowers</option>
+              <option value="Government">Government</option>
+              <option value="Health and personal care">Health and personal care</option>
+              <option value="Home and garden">Home and garden</option>
+              <option value="Nonprofit">Nonprofit</option>
+              <option value="Services - other">Services - other</option>
+              <option value="Sports and outdoors">Sports and outdoors</option>
+            </select><br />
 search results:
 <?php
   include 'toolbox.php';
