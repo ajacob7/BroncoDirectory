@@ -20,9 +20,9 @@ function searchBar(){
 			$type = $_POST['businesstype'],
 			$city = $_POST['city']);
 		#check if empty
-		/*foreach ($fields as $item) {
+		foreach ($fields as $item) {
 			prepareInput($item);
-		}*/
+		}
 		searchSQL($fields);
 	}
 
@@ -37,7 +37,7 @@ function searchSQL($fields){
 	//	 Parse the SQL query
     $first = true;
 
-    $search = 'SELECT businessName, phoneNo, city, type FROM ((Businesses Natural Join Verified) NATURAL JOIN Addresses)';
+    $search = 'SELECT businessName, phoneNo, city, type, businessId FROM ((Businesses Natural Join Verified) NATURAL JOIN Addresses)';
 
 
     if($fields[0] != '' OR $fields[1] != 'all' OR $fields[2] != ''){
@@ -82,13 +82,38 @@ function searchSQL($fields){
 	// Execute the query
 	oci_execute($query);
 	// Prepare to display results
+    echo "<br>Business &emsp;/ &emsp; City &emsp;/ &emsp; Type";
 	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
 	    // Use the uppercase column names for the associative array indices
-    echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3]."</b><br>";
-	}
+    //echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3]."</b><br>";i
+        echo "<br>".'<a href="businessDetails.html?id='.urlencode($row[4]).'">'.$row[0]."&emsp;/&emsp;".$row[2]."&emsp;/&emsp;".$row[3].'</a>';
+    }
 
     oci_free_statement($query);
 	oci_close($conn);
+}
+function getDetails($busID){
+    $conn = connectToDB();
+    
+    $query = oci_parse($conn, 'Select businessName, phoneNo, type, email, description, website, addressLine1, addressLine2, city, state,zipcode, country, businessID FROM ((Businesses NATURAL JOIN Addresses) NATURAL JOIN Verified) WHERE businessID = :busID');
+    oci_bind_by_name($query, ':busID',$busID);
+    oci_execute($query);
+
+    $row = oci_fetch_array($query, OCI_BOTH);
+
+    return $row;
+}
+function retrieveSecurityCheck($busID){
+    $conn = connectToDB();
+            
+    $query = oci_parse($conn, 'Select securityQuestion, questionAns, businessID FROM ((Businesses NATURAL JOIN Addresses) NATURAL JOIN Verified) WHERE businessID = :busID');
+    oci_bind_by_name($query, ':busID',$busID);
+    oci_execute($query);
+
+    $row = oci_fetch_array($query, OCI_BOTH);
+
+    return $row;
+
 }
 function viewCurrent(){
     $conn = connectToDB();

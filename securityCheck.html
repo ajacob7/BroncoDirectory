@@ -45,7 +45,12 @@
 
     <script src="https://www.scu.edu/assets/public/scu.js"></script>
   </head>
-
+  <?php
+    include 'toolbox.php';
+    $busID = $_GET['id'];
+    $info = retrieveSecurityCheck($busID);
+        
+  ?>
   <body class="sitemain ">
     <header class="header-legacy bg-light mb-md-5">
       <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
@@ -108,7 +113,7 @@
     	<div class="row">
       	<div class="col-sm-12">
 
-          <label class="form_title">Security Question:</label>Paste Question Here.<br />
+          <label class="form_title">Security Question:</label><?php echo $info[0]; ?><br />
           <form action="editPost.html">
             <label class="form_title">Answer:</label>
               <input type="text" name="SQResponse" required="required" />

@@ -66,6 +66,12 @@
 
 
 </head>
+<?php
+    include 'toolbox.php';
+    $busID = $_GET['id'];
+    $info = getDetails($busID);
+
+?>
 <body class="sitemain ">
   <header class="header-legacy bg-light mb-md-5">
     <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
@@ -134,7 +140,9 @@
   	<div class="row">
       <div class="col-sm-9">
       </div>
-      <a href="securityCheck.html" class="button">Click Here to Edit Your Business</a>
+      <?php
+       echo "<br>".'<a href="securityCheck.html?id='.urlencode($info[12]).'">'.'Click Here to Edit Your Business</a>';
+      ?>
     </div>
     <div class="row">
     	<div class="col-sm-12">
@@ -150,8 +158,7 @@
 
     });
 </script>
-
-<h2>Business Name</h2>
+<h2><?php echo $info[0]; ?></h2>
 
         </div>
        </div>
@@ -163,16 +170,17 @@
        </div>
 
        <div class="row">
-         <div class="col-sm-12" name="bDescription">
-           <h2>Description</h2>
+         <div class="col-sm-12" name="bDescription" style="text-align: center;">
+           <textarea  rows="8" cols="100" readonly placeholder=><?php echo $info[0]; ?></textarea><br />
          </div>
        </div>
 
        <div class="row" >
          <div class="col-sm-12">
-           <label class="form_title">Business Phone #:</label> <br />
-           <label class="form_title">Business Address:</label> <br />
-           <label class="form_title">Business Website:</label> <br />
+           <label class="form_title"><b>Business Phone #:</b> </label> <?php echo $info[1]; ?><br />
+           <label class="form_title"><b>Business email:</b> </label> <?php echo $info[3]; ?><br />
+           <label class="form_title"><b>Business Address: </b></label> <?php echo $info[6].", ".$info[7].", ".$info[8].", ".$info[9].", ".$info[10].", ".$info[11]; ?><br />
+           <label class="form_title"><b>Business Website: </b></label> <?php echo $info[5]; ?> <br />
          </div>
        </div>
 <style>
