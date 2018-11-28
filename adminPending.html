@@ -1,13 +1,3 @@
-<!--
-    File:        adminPending.html
-
-    Description: This is the admin pending page which will bring up all of the pending business postings.
-                 This page allows for the admin to either accept or deny pending businesses.
-
-
-   Disclaimer    *file uses some pre-existing SCU website framework*
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,9 +32,9 @@
 
 
 
-  <!--[if lte IE 9]>
+  <!--[if lte IE 9]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" async></script>
-  <![endif]-->
+  <!--[endif]-->
 
   <!-- external styles -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
@@ -64,7 +54,7 @@
 
 
 
-<!-- formatting -->
+
 </head>
 <body class="sitemain ">
   <header class="header-legacy bg-light mb-md-5">
@@ -141,11 +131,9 @@ Pending:<br /><br />
   verifyListing();
   viewQueue();
 ?>
-<!-- Outputs the instructions for the admin to verify or deny pending listings -->
 <br /><br />
 <form method="POST">
   <label>Enter the business ID that you want to verify and post: <input type="number" name="businessID" /></label> <br/ >
-<!-- verifies the listing -->
   <input type="submit" name="Verify" value="Verify" />
 </form>
 
@@ -166,7 +154,7 @@ Pending:<br /><br />
 
 
 
-<footer class="footer-core border-top bg-white pt-4 footer-core">
+<footer  class="footer-core border-top bg-white pt-4 footer-core">
 	<div class="container">
 		<a href="/" class="h4 text-dark text-uppercase wordmark d-block mb-4">Santa Clara University</a>
 		<div class="row">
