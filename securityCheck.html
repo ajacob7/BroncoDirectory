@@ -1,20 +1,11 @@
-<!--
-    File:        results.html
 
-    Description: This is the business search results page which lists all business that match the
-                 search criteria. User can select a business to be redirected to the businessdetails.html
-                 page to view more information about the business. This page also lists all business
-                 results on the Google Maps API.
-
-   Disclaimer    *file uses some pre-existing SCU website framework*
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <title>Search Results - Bronco Directory</title>
+    <title>Security Check - Bronco Directory</title>
     <meta name="description" content="Search the Santa Clara University web site">
   	<meta name="keywords" content="search">
   	<meta name="author" content="Santa Clara University">
@@ -39,7 +30,7 @@
     <meta name="theme-color" content="#ffffff">
   	<link rel="canonical" href="https://www.scu.edu/search/">
 
-    <!--[if lte IE 9]-->
+    <!--[if lte IE 9] -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" async></script>
     <!--[endif]-->
 
@@ -53,8 +44,8 @@
     <!-- /toolkit styles -->
 
     <script src="https://www.scu.edu/assets/public/scu.js"></script>
-
   </head>
+
   <body class="sitemain ">
     <header class="header-legacy bg-light mb-md-5">
       <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
@@ -73,7 +64,6 @@
           </div>
         </div>
       </div>
-
       <nav class="navbar navbar-expand-lg navbar-dark py-0 fixed-top nav-fixed initial nav-brand" id="navbarBrand">
         <div class="container">
           <button class="navbar-toggler px-3 py-2" type="button"
@@ -85,7 +75,7 @@
             <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
               <li class="nav-item">
   				      <a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
-  		        </li>
+  			      </li>
   			      <li class="nav-item">
   				      <a class="nav-link text-white text-uppercase px-3" href="createListing.html">Create Listing</a>
   			      </li>
@@ -116,74 +106,27 @@
 
     <div class="container" id="content">
     	<div class="row">
-      	<div class="col-sm-6">
+      	<div class="col-sm-12">
 
-          <!-- Form for entering business name and/or filter searching by city name and business type -->
-          <form method="POST" action="results.html">
-            <input type="text" placeholder="Enter Business" name="search" style="width:200px;">
-            <input type="text" placeholder="Enter a city" name="city" id="city" style="width:200px">
-            <button type="submit" value="search">Search</button><br />
-
-            <b>Filter:</b><br />
-            type:
-              <select name="businesstype" >
-                <option value="all">all</option>
-                <option value="automotive">Automotive</option>
-                <option value="catering">Catering</option>
-                <option value="restaurant">Restaurant</option>
-                <option value="retail">Retail</option>
-                <option value="education">Education</option>
-                <option value="electronics">Electronics</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="financial">Financial</option>
-                <option value="Floral">Floral</option>
-                <option value="government">Government</option>
-                <option value="health">Health</option>
-                <option value="home">Home</option>
-                <option value="nonprofit">Nonprofit</option>
-                <option value="services">Services</option>
-                <option value="sports">Sports</option>
-              </select><br />
+          <label class="form_title">Security Question:</label>Paste Question Here.<br />
+          <form action="editPost.html">
+            <label class="form_title">Answer:</label>
+              <input type="text" name="SQResponse" required="required" />
+              <input type="submit" value="Submit" />
           </form>
-
-
-          search results:
-          <?php
-            <!-- allows file to use functions from toolbox.php file -->
-            include 'toolbox.php';
-            
-            searchBar();
-          ?>
+          <style>
+            label[class="form_title"]{
+              width: 150px;
+              vertical-align: top;
+            }
+          </style>
         </div>
 
         <!-- <script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
-        <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script> -->
-
-        <div class="col-sm-6" >
-          <div id="map"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8QeiW6GHtzUc-bu5qIWp6jEfAD5DS0o4&callback=initMap" async defer></script>
-              <style>
-                /* Always set the map height explicitly to define the size of the div
-                 * element that contains the map. */
-                #map {
-                  height: 400px;
-                  width: 100%;
-                }
-              </style>
-    	  </div>
-
-        <script>
-        var map;
-        function initMap() {
-          map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 37.3496, lng: -121.56},
-            zoom: 8
-          });
-        }
-        </script>
-        <!-- <script>
-  	      $(document).ready(function() {
-      	  $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
+        <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script>
+        <script> -->
+        <!-- $(document).ready(function() {
+          $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
         });
         </script> -->
       </div>

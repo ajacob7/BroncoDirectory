@@ -1,207 +1,202 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <title>Login - Bronco Directory</title>
-  <meta name="description" content="Search the Santa Clara University web site">
-	<meta name="keywords" content="search">
-	<meta name="author" content="Santa Clara University">
-	<meta name="generator" content="T4 Site Core">
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/assets/images/favicons/manifest.json">
-  <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="/assets/images/favicons/mstile-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Admin Login - Bronco Directory</title>
+    <meta name="description" content="Search the Santa Clara University web site">
+  	<meta name="keywords" content="search">
+  	<meta name="author" content="Santa Clara University">
+  	<meta name="generator" content="T4 Site Core">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/images/favicons/manifest.json">
+    <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/images/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  	<link rel="canonical" href="https://www.scu.edu/search/">
 
-	<link rel="canonical" href="https://www.scu.edu/search/">
+    <!--[if lte IE 9] -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" async></script>
+    <!--[endif]-->
 
+    <!-- external styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
+    <!-- /external styles -->
 
+    <!-- toolkit styles -->
+    <link rel="stylesheet" href="https://www.scu.edu/assets/public/scu.css" />
+    <link href="/media/scuedu/style-assets/stylesheets/f.css" rel="stylesheet">
+    <!-- /toolkit styles -->
 
-  <!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" async></script>
-  <![endif]-->
+    <script src="https://www.scu.edu/assets/public/scu.js"></script>
+  </head>
 
-  <!-- external styles -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
-  <!-- /external styles -->
-
-  <!-- toolkit styles -->
-  <link rel="stylesheet" href="https://www.scu.edu/assets/public/scu.css" />
-  <link href="/media/scuedu/style-assets/stylesheets/f.css" rel="stylesheet">
-  <!-- /toolkit styles -->
-
-  <script src="https://www.scu.edu/assets/public/scu.js"></script>
-
-
-
-
-
-
-
-
-
-</head>
-<body class="sitemain ">
-  <!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5T9KDR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5T9KDR');</script>
-<!-- End Google Tag Manager -->
-
-  <header class="header-legacy bg-light mb-md-5">
-    <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
-      <div class="d-flex align-items-center">
-        <a href="index.html" class="seal d-none d-lg-inline mr-3">
-          <i class="icon-scu"></i>
-          <span class="sr-only">Santa Clara University Homepage</span>
-        </a>
-        <div class="text-center text-md-left">
-          <h2 class="text-trajan wordmark m-0">
-            <a href="index.html" class="text-primary">Santa Clara University</a>
-          </h2>
-          <h6 class="text-trajan wordmark m-0">
-            <a href="index.html" class="text-muted">The Jesuit University in Silicon Valley</a>
-          </h6>
+  <body class="sitemain ">
+    <header class="header-legacy bg-light mb-md-5">
+      <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
+        <div class="d-flex align-items-center">
+          <a href="index.html" class="seal d-none d-lg-inline mr-3">
+            <i class="icon-scu"></i>
+            <span class="sr-only">Santa Clara University Homepage</span>
+          </a>
+          <div class="text-center text-md-left">
+            <h2 class="text-trajan wordmark m-0">
+              <a href="index.html" class="text-primary">Santa Clara University</a>
+            </h2>
+            <h6 class="text-trajan wordmark m-0">
+              <a href="index.html" class="text-muted">The Jesuit University in Silicon Valley</a>
+            </h6>
+          </div>
         </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark py-0 fixed-top nav-fixed initial nav-brand" id="navbarBrand">
+        <div class="container">
+          <button class="navbar-toggler px-3 py-2" type="button"
+                  data-toggle="collapse" data-target="#navbarBrandList"
+                  aria-controls="navbarBrandList" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="text-uppercase">menu</span>
+          </button>
+          <div class="collapse navbar-collapse bg-primary" id="navbarBrandList">
+            <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
+              <li class="nav-item">
+  				      <a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
+  			      </li>
+  			      <li class="nav-item">
+  				      <a class="nav-link text-white text-uppercase px-3" href="createListing.html">Create Listing</a>
+  			      </li>
+  			      <li class="nav-item">
+  				      <a class="nav-link text-white text-uppercase px-3" href="adminLogin.html">Administrator</a>
+  			      </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="subheader py-4 pt-lg-5 pb-md-4 mb-4 bg-dark">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-12 align-self-center">
+    				<h1 class="text-sans-light mb-0">Bronco Directory</h1>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+    <script>
+    	$(document).ready(function(){
+    		$("header").removeClass("mb-md-5");
+    	});
+    </script>
+
+    <div class="container" id="content">
+    	<div class="row">
+      	<div class="col-sm-12">
+          <form action="adminPending.html">
+              <label class="login" for="username"> Username: </label>
+                <input type="text" name="username" required="required" /></title><br />
+              <label class="login" for="password"> Password: </label>
+                <input type="password" name="password" required="required" />
+                <input type="submit" value="Submit" />
+          </form>
+          <style>
+            label[class="login"]{
+              width: 150px;
+            }
+          </style>
+        </div>
+
+        <!-- <script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
+        <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script>
+        <script> -->
+        <!-- $(document).ready(function() {
+          $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
+        });
+        </script> -->
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark py-0 fixed-top nav-fixed initial nav-brand" id="navbarBrand">
-      <div class="container">
-        <button class="navbar-toggler px-3 py-2" type="button"
-                data-toggle="collapse" data-target="#navbarBrandList"
-                aria-controls="navbarBrandList" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="text-uppercase">menu</span>
-        </button>
-        <div class="collapse navbar-collapse bg-primary" id="navbarBrandList">
-          <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
-            <li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="createListing.html">Create Listing</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link text-white text-uppercase px-3" href="adminLogin.html">Administrator</a>
-			</li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
 
+    <footer class="footer-core border-top bg-white pt-4 footer-core">
+    	<div class="container">
+    		<a href="/" class="h4 text-dark text-uppercase wordmark d-block mb-4">Santa Clara University</a>
+    		<div class="row">
+    			<div class="col-12 col-md-6">
+    				<p class="mb-0">500 El Camino Real<br>Santa Clara, CA 95053<br>(408) 554-4000</p>
+            <ul class="list-unstyled list-spaced">
+              <li><a href="https://www.scu.edu/map/">Maps &amp; Directions</a></li>
+              <li><a href="https://phonebook.scu.edu/">Contact Us</a></li>
+            </ul>
+    				<ul class="list-inline mb-0 footer-social-icons">
+    					<li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/SantaClaraUniversity">
+    					<i class="demo-icon icon-facebook-squared"></i>
+    					<span class="sr-only">SCU on Facebook</span>
+    					</a></li>
+    					<li class="list-inline-item"><a class="twitter" href="https://twitter.com/SantaClaraUniv">
+    					<i class="demo-icon icon-twitter"></i>
+    					<span class="sr-only">SCU on Twitter</span>
+    					</a></li>
+    					<li class="list-inline-item"><a class="linkedin" href="https://www.linkedin.com/edu/santa-clara-university-17914">
+    					<i class="demo-icon icon-linkedin"></i>
+    					<span class="sr-only">SCU on Linkedin</span>
+    					</a></li>
+    					<li class="list-inline-item"><a class="youtube" href="https://www.youtube.com/channel/UCsii-lMGVZ5tL3lj2No6i7A?sub_confirmation=1">
+    					<i class="demo-icon icon-youtube"></i>
+    					<span class="sr-only">SCU on YouTube</span>
+    					</a></li>
+    					<li class="list-inline-item"><a class="instagram" href="https://instagram.com/santaclarauniversity/">
+    					<i class="demo-icon icon-instagram"></i>
+    					<span class="sr-only">SCU on Instagram</span>
+    					</a></li>
+    				</ul>
+            <hr class="d-block d-md-none pt-2">
+    			</div>
 
+    			<div class="col-12 col-md-3">
+      			<ul class="list-unstyled list-spaced">
+              <li><h6 class="text-uppercase">Resources</h6></li>
+              <li><a title="Home &raquo; Home &raquo; Emergency" href="/emergency/">Emergency Info</a></li>
+              <li><a title="Home &raquo; Home &raquo; Human Resources &raquo; Careers" href="/hr/careers/">Careers</a></li>
+              <li><a href="https://www.scu.edu/login">Login</a></li>
+              <li><span class="fa fa-universal-access text-primary"><span class="sr-only">Accessiblity icon</span></span> <a title="Home &raquo; Home &raquo; Accessibility" href="/accessibility/">Accessibility</a></li>
+            </ul>
+    		  </div>
 
+    			<div class="col-12 col-md-3">
+      			<ul class="list-unstyled list-spaced">
+              <li><h6 class="text-uppercase ">Our Campus</h6></li>
+              <li><a title="Home &raquo; Home &raquo; Mission Santa Clara de As&iacute;s" href="/missionchurch/">The Mission</a></li>
+              <li><a title="Home &raquo; Home &raquo; Event Calendar" href="/events/">Event Calendar</a></li>
+              <li><a title="Home &raquo; Home &raquo; News &amp; Events" href="/news-and-events/">News</a></li>
+            </ul>
+    			</div>
+    		</div>
+    	</div>
 
-<div class="subheader py-4 pt-lg-5 pb-md-4 mb-4 bg-dark">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 align-self-center">
-				<h1 class="text-sans-light mb-0">Bronco Directory</h1>
-			</div>
-		</div>
-	</div>
-</div>
+    	<p class="bg-gradient-primary mb-0 mt-4 p-3 small text-center">&copy; 2018 Santa Clara University</p>
 
-<script>
-	$(document).ready(function(){
-		$("header").removeClass("mb-md-5");
-	});
-</script>
+    </footer>
 
-
-
-  <div class="container" id="content">
-    <div class="row">
-    	<div class="col-sm-12">
-
-<script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
-
-<script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script>
-
-  <script>
-	$(document).ready(function() {
-    	$('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
-
-    });
-</script>
-
-<form action="adminPending.html">
-    <label class="login" for="username"> Username: </label>
-      <input type="text" name="username" required="required" /></title><br />
-    <label class="login" for="password"> Password: </label>
-      <input type="password" name="password" required="required" />
-      <input type="submit" value="Submit" />
-</form>
-<style>
-  label[class="login"]{
-    width: 150px;
-  }
-</style>
-</div>
-</div>
-</div>
-
-<footer class="footer-core border-top bg-white pt-4 footer-core">
-	<div class="container">
-		<a href="/" class="h4 text-dark text-uppercase wordmark d-block mb-4">Santa Clara University</a>
-		<div class="row">
-			<div class="col-12 col-md-6">
-				<p class="mb-0">500 El Camino Real<br>Santa Clara, CA 95053<br>(408) 554-4000</p>
-<ul class="list-unstyled list-spaced">
-<li><a href="https://www.scu.edu/map/">Maps &amp; Directions</a></li>
-<li><a href="https://phonebook.scu.edu/">Contact Us</a></li>
-</ul>
-				<ul class="list-inline mb-0 footer-social-icons">
-					<li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/SantaClaraUniversity">
-					<i class="demo-icon icon-facebook-squared"></i>
-					<span class="sr-only">SCU on Facebook</span>
-					</a></li>
-					<li class="list-inline-item"><a class="twitter" href="https://twitter.com/SantaClaraUniv">
-					<i class="demo-icon icon-twitter"></i>
-					<span class="sr-only">SCU on Twitter</span>
-					</a></li>
-					<li class="list-inline-item"><a class="linkedin" href="https://www.linkedin.com/edu/santa-clara-university-17914">
-					<i class="demo-icon icon-linkedin"></i>
-					<span class="sr-only">SCU on Linkedin</span>
-					</a></li>
-					<li class="list-inline-item"><a class="youtube" href="https://www.youtube.com/channel/UCsii-lMGVZ5tL3lj2No6i7A?sub_confirmation=1">
-					<i class="demo-icon icon-youtube"></i>
-					<span class="sr-only">SCU on YouTube</span>
-					</a></li>
-					<li class="list-inline-item"><a class="instagram" href="https://instagram.com/santaclarauniversity/">
-					<i class="demo-icon icon-instagram"></i>
-					<span class="sr-only">SCU on Instagram</span>
-					</a></li>
-				</ul>
-			<hr class="d-block d-md-none pt-2">
-			</div>
-		</div>
-	</div>
-	<p class="bg-gradient-primary mb-0 mt-4 p-3 small text-center">&copy; 2018 Santa Clara University</p>
-</footer>
-    <script> $(document).ready(function() {
-		$("#toplink1340").addClass("active");
-		$("#toplink1127").addClass("active");
-});</script>
+    <script>
+      $(document).ready(function() {
+        $("#toplink1340").addClass("active");
+        $("#toplink1127").addClass("active");
+      });
+    </script>
 
     <script>
       $(document).ready(function() {
@@ -212,8 +207,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       });
     </script>
 
-
-
-
-   </body>
+  </body>
 </html>
