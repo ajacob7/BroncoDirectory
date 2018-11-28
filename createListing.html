@@ -143,32 +143,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <label class="form_title">Full Name: </label><input type="text" name="Aname" /> <br/ >
   <label class="form_title">Personal Phone #:</label><input type="text" name="phone" /><br/ >
   <label class="form_title">Email:</label><input type="text" name="personalEmail" /><br/ >
-  <label class="form_title">Graduation Year: </label><select id="gradYear" name="gradYear"></select><br/ >
+  <label class="form_title">Graduation Year: </label>
+  <select id="gradYear" name="gradYear">
+    <option disabled selected values> -- select on option -- </option>
+  </select><br/ >
 <h2>Business Info</h2><br />
   <label class="form_title">Business Type:</label>
   <select name="businessType" >
     <option disabled selected values> -- select on option -- </option>
     <option value="automotive">Automotive</option>
+    <option value="catering">Catering</option>
     <option value="restaurant">Restaurant</option>
     <option value="retail">Retail</option>
-    <option value="Education">Education</option>
-    <option value="Electronics and telecom">Electronics and telecom</option>
-    <option value="Entertainment and media">Entertainment and media</option>
-    <option value="Financial services and products">Financial services and products.</option>
-    <option value="Food retail and service">Food retail and service</option>
-    <option value="Gifts and flowers">Gifts and flowers</option>
-    <option value="Government">Government</option>
-    <option value="Health and personal care">Health and personal care</option>
-    <option value="Home and garden">Home and garden</option>
-    <option value="Nonprofit">Nonprofit</option>
-    <option value="Services - other">Services - other</option>
-    <option value="Sports and outdoors">Sports and outdoors</option>
+    <option value="education">Education</option>
+    <option value="electronics">Electronics</option>
+    <option value="entertainment">Entertainment</option>
+    <option value="financial">Financial</option>
+    <option value="Floral">Floral</option>
+    <option value="government">Government</option>
+    <option value="health">Health</option>
+    <option value="home">Home</option>
+    <option value="nonprofit">Nonprofit</option>
+    <option value="services">Services</option>
+    <option value="sports">Sports</option>
   </select><br />
   <label class="form_title">Name: </label><input type="text" name="Bname" /><br/ >
   <label class="form_title">Phone #:</label><input type="text" name="phone" /><br/ >
   <label class="form_title">Email:</label><input type="text" name="businessEmail" /><br/ >
-  <label class="form_title">Address Line 1:</label><input type="text" name="addressL1" /><br/ >  
-  <label class="form_title">Address Line 2:</label><input type="text" name="addressL2" /><br/ >  
+  <label class="form_title">Address Line 1:</label><input type="text" name="addressL1" /><br/ >
+  <label class="form_title">Address Line 2:</label><input type="text" name="addressL2" /><br/ >
   <label class="form_title">City: </label><input type="text" name="city" /><br/ >
   <label class="form_title">State:</label>
   <select name="state">
