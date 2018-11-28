@@ -97,7 +97,7 @@ function viewCurrent(){
 	    exit;
 	}
 	// Parse the SQL query
-	$query = oci_parse($conn, 'SELECT businessID, businessName, phoneNo, city, type FROM VERIFIED NATURAL JOIN Businesses');
+	$query = oci_parse($conn, 'SELECT businessID, businessName, phoneNo, type FROM VERIFIED NATURAL JOIN Businesses');
 	// Execute the query
 	oci_execute($query);
 	// Prepare to display results
@@ -113,7 +113,7 @@ function viewCurrent(){
 function viewQueue(){
 	$conn=connectToDB();
 	if(!$conn) {
-	    print "<br> connection failed:";
+	    echo "<br> connection failed:";
 	    exit;
 	}
 	// Parse the SQL query
@@ -134,21 +134,35 @@ function viewQueue(){
 function createListing(){
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    # collect input data
-		$fields = array($Aname = $_POST['Aname'],
-			$Bname = $_POST['Bname'],
+		$fields = array($Aname = $_POST['aName'],
+            $phone = $_POST['pPhone'],
+            $pEmail = $_POST['personalEmail'],
+            $gradYear = $_POST['gradYear'],
+            $securityQuestion = $_POST['securityQuestion'],
+            $answer = $_POST['SQAnswer'], 
+			$businessType = $_POST['businessType'],
+			$bName = $_POST['bName'],
+            $bPhone = $_POST['bPhone'],
+            $bEmail = $_POST['businessEmail'],
+            $aLine1 = $_POST['addressL1'],
+            $aLine2 = $_POST['addressL2'],
 			$city = $_POST['city'],
-			$phone = $_POST['phone'],
-			$businessType = $_POST['businessType']);
+            $state = $_POST['state'],
+            $zip = $_POST['zipCode'],
+            $country = $_POST['country'],
+			$description = $_POST['bDescription'],
+            //$image = file_get_contents($_FILES['bImage']['tmp_name']),
+            $website = $_POST['website']);
 		#check if empty
-		if(checkFill($fields)){
+		//if(checkFill($fields)){
 			foreach ($fields as $item) {
 				prepareInput($item);
 			}
 			insertSQL($fields);
-		}
+		/*}
 		else{
 			echo "Did not complete required fields <br>";
-		}
+		}*/
 	}
 }
 function insertSQL($fields){
@@ -159,19 +173,43 @@ function insertSQL($fields){
         exit;
 	}
 	//	 Parse the SQL query
-	$query = oci_parse($conn, 'BEGIN INSERTpro(:Aname, :Bname, :city, :phone, :businessType);END;');
+	$query = oci_parse($conn, 'BEGIN INSERTpro(:aName, :pPhone, :personalEmail, :gradYear, :securityQuestion, :SQAnswer, :businessType, :bName, :bPhone, :businessEmail, :addressL1, :addressL2, :city, :zipCode, :state, :country, :bDescription, :website);END;');
 
-	oci_bind_by_name($query,':Aname',$fields[0]);
-	oci_bind_by_name($query,':Bname',$fields[1]);
-	oci_bind_by_name($query,':city',$fields[2]);
-	oci_bind_by_name($query,':phone',$fields[3]);
-	oci_bind_by_name($query,':businessType',$fields[4]);
+    //$blob = oci_new_descriptor($conn, OCI_D_LOB);
+    oci_bind_by_name($query,':aName',$fields[0]);
+    oci_bind_by_name($query,':pPhone',$fields[1]);
+    oci_bind_by_name($query,':personalEmail',$fields[2]);
+    oci_bind_by_name($query,':gradYear',$fields[3]);
+    oci_bind_by_name($query,':securityQuestion',$fields[4]);
+    oci_bind_by_name($query,':SQAnswer',$fields[5]);
+    oci_bind_by_name($query,':businessType',$fields[6]);
+    oci_bind_by_name($query,':bName',$fields[7]);
+    oci_bind_by_name($query,':bPhone',$fields[8]);
+    oci_bind_by_name($query,':businessEmail',$fields[9]);
+    oci_bind_by_name($query,':addressL1',$fields[10]);
+    oci_bind_by_name($query,':addressL2',$fields[11]);
+    oci_bind_by_name($query,':city',$fields[12]);
+    oci_bind_by_name($query,':zipCode',$fields[13]);
+    oci_bind_by_name($query,':state',$fields[14]);
+    oci_bind_by_name($query,':country',$fields[15]);
+    oci_bind_by_name($query,':bDescription',$fields[16]);
+    oci_bind_by_name($query,':website',$fields[17]);
+    //oci_bind_by_name($result, ":bImage", $blob, -1, OCI_B_BLOB);
 
+    //oci_execute($query, OCI_DEFAULT) or die ("Unable to execute query");
+    
+    //if(!$blob->save($image)) {
+    //        oci_rollback($conn);
+    //}
+    //else {
+    //        oci_commit($conn);
+    //}
     //echo $query."\n";
 	// Execute the query
 	oci_execute($query);
 	oci_free_statement($query);
-	oci_close($conn);
+	//$blob->free();
+    oci_close($conn);
 
 }
 
