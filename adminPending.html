@@ -1,3 +1,13 @@
+<!--
+    File:        adminPending.html
+
+    Description: This is the admin pending page which will bring up all of the pending business postings.
+                 This page allows for the admin to either accept or deny pending businesses.
+
+
+   Disclaimer    *file uses some pre-existing SCU website framework*
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +64,7 @@
 
 
 
-
+<!-- formatting -->
 </head>
 <body class="sitemain ">
   <header class="header-legacy bg-light mb-md-5">
@@ -131,9 +141,11 @@ Pending:<br /><br />
   verifyListing();
   viewQueue();
 ?>
+<!-- Outputs the instructions for the admin to verify or deny pending listings -->
 <br /><br />
 <form method="POST">
   <label>Enter the business ID that you want to verify and post: <input type="number" name="businessID" /></label> <br/ >
+<!-- verifies the listing -->
   <input type="submit" name="Verify" value="Verify" />
 </form>
 
