@@ -148,17 +148,12 @@
 
 
           search results:
+          <!-- php function displays businesses that meet search criteria as clickable links -->
           <?php
-
             include 'toolbox.php';
-
             searchBar();
           ?>
         </div>
-
-        <!-- <script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
-        <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script> -->
-
         <div class="col-sm-6" >
           <div id="map"></div>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8QeiW6GHtzUc-bu5qIWp6jEfAD5DS0o4&callback=initMap" async defer></script>
@@ -181,11 +176,6 @@
           });
         }
         </script>
-        <!-- <script>
-  	      $(document).ready(function() {
-      	  $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
-        });
-        </script> -->
       </div>
     </div>
 

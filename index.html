@@ -126,7 +126,7 @@
   <div class="container" id="content">
   	<div class="row">
     	<div class="col-sm-6">
-
+        <!-- search form allowing user to search business by name, city, and/or type -->
         <form method="POST" action="results.html">
           <input type="text" placeholder="Enter Business" name="search" style="width:200px;">
           <input type="text" placeholder="Enter a city" name="city" id="city" style="width:200px">
@@ -162,8 +162,6 @@
 
       <div class="col-sm-6" >
         <div id="map"></div>
-      	<!-- <div class="card my-3" id="map"> -->
-      		<!-- <div class="card-block card-body" id="map"></div> -->
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8QeiW6GHtzUc-bu5qIWp6jEfAD5DS0o4&callback=initMap" async defer></script>
             <style>
               /* Always set the map height explicitly to define the size of the div

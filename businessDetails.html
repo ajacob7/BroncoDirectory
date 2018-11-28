@@ -66,6 +66,9 @@
 
 
 </head>
+<!-- php function calls to retrieve appropriate data from data tables pertaining to the specific
+business ID number of the business post clicked on from the allListings.html page. Data
+will be used to echo into appropriate fields in provided template locations -->
 <?php
     include 'toolbox.php';
     $busID = $_GET['id'];
@@ -140,6 +143,8 @@
   	<div class="row">
       <div class="col-sm-9">
       </div>
+
+      <!-- link to edit current business post -->
       <?php
        echo "<br>".'<a href="securityCheck.html?id='.urlencode($info[12]).'">'.'Click Here to Edit Your Business</a>';
       ?>
@@ -147,64 +152,69 @@
     <div class="row">
     	<div class="col-sm-12">
 
-<script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
+        <script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
 
-<script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script>
+        <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script>
 
 
-  <script>
-	$(document).ready(function() {
-    	$('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
+        <script>
+	       $(document).ready(function() {
+    	      $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
 
-    });
-</script>
-<h2><?php echo $info[0]; ?></h2>
+          });
+        </script>
+        <!-- echos business name of Business ID into header location -->
+        <h2><?php echo $info[0]; ?></h2>
 
         </div>
        </div>
 
+
        <div class="row">
          <div class="col-sm-12" id="bImage">
+           <!-- temporary business image placeholder -->
            <img src="carShop.jpg" style="max-width:550px;"/>
          </div>
        </div>
 
        <div class="row">
          <div class="col-sm-12" name="bDescription" style="text-align: center;">
+           <!-- echo business description into readonly textarea -->
            <textarea  rows="8" cols="100" readonly placeholder=><?php echo $info[0]; ?></textarea><br />
          </div>
        </div>
 
        <div class="row" >
          <div class="col-sm-12">
+           <!-- echo business contact information accordingly -->
            <label class="form_title"><b>Business Phone #:</b> </label> <?php echo $info[1]; ?><br />
            <label class="form_title"><b>Business email:</b> </label> <?php echo $info[3]; ?><br />
            <label class="form_title"><b>Business Address: </b></label> <?php echo $info[6].", ".$info[7].", ".$info[8].", ".$info[9].", ".$info[10].", ".$info[11]; ?><br />
            <label class="form_title"><b>Business Website: </b></label> <?php echo $info[5]; ?> <br />
          </div>
        </div>
-<style>
-  h2
-  {
-    text-align: center;
-  }
-  div[name="bDescription"]
-  {
-      margin-top: 10px;
-      margin-bottom: 20px;
-  }
-  #bImage img
-  {
-    margin-left: auto;
-	  margin-right: auto;
-	  display: block;
-  }
-  label[class="form_title"]
-  {
-    width: 150px;
-    vertical-align: top;
-  }
-</style>
+        <style>
+          h2
+          {
+            text-align: center;
+          }
+          div[name="bDescription"]
+          {
+              margin-top: 10px;
+              margin-bottom: 20px;
+          }
+          #bImage img
+          {
+            margin-left: auto;
+        	  margin-right: auto;
+        	  display: block;
+          }
+          label[class="form_title"]
+          {
+            width: 150px;
+            vertical-align: top;
+          }
+        </style>
 
 <footer class="footer-core border-top bg-white pt-4 footer-core">
 	<div class="container">

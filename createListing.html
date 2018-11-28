@@ -112,9 +112,6 @@
       });
     </script>
 
-    <!-- <script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
-    <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script> -->
-
     <div class="container" id="content">
     	<div class="row">
       	<div class="col-sm-12">
@@ -140,7 +137,7 @@
 
           <h2>Business Info</h2><br />
             <label class="form_title">Business Type:</label>
-            <select name="businessType" required>
+            <select name="businessType" >
               <option value=""> -- select on option -- </option>
               <option value="automotive">Automotive</option>
               <option value="catering">Catering</option>
@@ -162,7 +159,7 @@
             <label class="form_title">Phone #:</label><input type="text" name="bPhone" required/><br/ >
             <label class="form_title">Email:</label><input type="text" name="businessEmail" required/><br/ >
             <label class="form_title">Address Line 1:</label><input type="text" name="addressL1" required/><br/ >
-            <label class="form_title">Address Line 2:</label><input type="text" name="addressL2" value=" "/><br/ >
+            <label class="form_title">Address Line 2:</label><input type="text" name="addressL2" placeholder=""/><br/ >
             <label class="form_title">City: </label><input type="text" name="city" required/><br/ >
             <label class="form_title">State:</label><input type="text" name="state" required/><br/>
             <label class="form_title">Zip Code:</label><input type="text" name="zipCode" required/><br/ >
@@ -419,10 +416,10 @@
               <option value="ZM">Zambia</option>
               <option value="ZW">Zimbabwe</option>
             </select><br />
-            <label class="form_title">Description: </label><textarea rows="8" cols="100" name="bDescription" placeholder="Type business description here..."required></textarea><br />
+            <label class="form_title">Description: </label><textarea rows="8" cols="100" name="bDescription"placeholder="Type business description here..."></textarea><br />
             <label class= "form_title2">Upload your <br />business image:</label>
             <input type="file" name="bImage" accept="image/*" /><br />
-            <label class="form_title">Website Address:</label><input type="text" name="website" value=" " /><br/>
+            <label class="form_title">Website Address:</label><input type="text" name="website" /><br/>
             <input type="submit" value="Submit">
           </form>
 
@@ -442,7 +439,7 @@
               margin-bottom: 20px;
             }
           </style>
-
+          <!-- script for populating dropdown list with graduation years -->
           <script>
             var max = new Date().getFullYear(),
               min = max - 100,
@@ -455,16 +452,12 @@
               select.appendChild(opt);
             }
           </script>
-
+          <!-- php function calls to submit form information to database on submit -->
           <?php
             include 'toolbox.php';
             createListing();
           ?>
 
-          <!-- <script>
-  	      $(document).ready(function() {
-      	      $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
-          }); -->
           </script>
         </div>
       </div>
