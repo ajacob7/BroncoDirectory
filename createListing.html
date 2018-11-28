@@ -1,117 +1,116 @@
-<!--
-    File:        createListing.html
-
-    Description: This is business submission page which contains various forms to fill out, allowing an
-                 alumni to enter their business information and personal information. This information
-                 then gets sent to a pending queue available to alumni office admins to review and verify.
-
-   Disclaimer    *file uses some pre-existing SCU website framework*
--->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <title>Create Listing - Bronco Directory</title>
-    <meta name="description" content="Search the Santa Clara University web site">
-    <meta name="keywords" content="search">
-    <meta name="author" content="Santa Clara University">
-    <meta name="generator" content="T4 Site Core">
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/assets/images/favicons/manifest.json">
-    <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="/assets/images/favicons/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="canonical" href="https://www.scu.edu/search/">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <title>Create Listing - Bronco Directory</title>
+  <meta name="description" content="Search the Santa Clara University web site">
+	<meta name="keywords" content="search">
+	<meta name="author" content="Santa Clara University">
+	<meta name="generator" content="T4 Site Core">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/assets/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/assets/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-    <!--[if lte IE 9] -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" async></script>
-    <!--[endif]-->
+	<link rel="canonical" href="https://www.scu.edu/search/">
 
-    <!-- external styles -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
-    <!-- /external styles -->
 
-    <!-- toolkit styles -->
-    <link rel="stylesheet" href="https://www.scu.edu/assets/public/scu.css" />
-    <link href="/media/scuedu/style-assets/stylesheets/f.css" rel="stylesheet">
-    <!-- /toolkit styles -->
 
-    <script src="https://www.scu.edu/assets/public/scu.js"></script>
-  </head>
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" async></script>
+  <![endif]-->
 
-  <body class="sitemain ">
-    <header class="header-legacy bg-light mb-md-5">
-      <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
-        <div class="d-flex align-items-center">
-          <a href="index.html" class="seal d-none d-lg-inline mr-3">
-            <i class="icon-scu"></i>
-            <span class="sr-only">Santa Clara University Homepage</span>
-          </a>
-          <div class="text-center text-md-left">
-            <h2 class="text-trajan wordmark m-0">
-              <a href="index.html" class="text-primary">Santa Clara University</a>
-            </h2>
-            <h6 class="text-trajan wordmark m-0">
-              <a href="index.html" class="text-muted">The Jesuit University in Silicon Valley</a>
-            </h6>
-          </div>
-        </div>
-      </div>
-      <nav class="navbar navbar-expand-lg navbar-dark py-0 fixed-top nav-fixed initial nav-brand" id="navbarBrand">
-        <div class="container">
-          <button class="navbar-toggler px-3 py-2" type="button"
-                  data-toggle="collapse" data-target="#navbarBrandList"
-                  aria-controls="navbarBrandList" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="text-uppercase">menu</span>
-          </button>
-          <div class="collapse navbar-collapse bg-primary" id="navbarBrandList">
-            <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
-              <li class="nav-item">
-                <a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white text-uppercase px-3" href="createListing.html">Create Listing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white text-uppercase px-3" href="adminLogin.html">Administrator</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+  <!-- external styles -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
+  <!-- /external styles -->
 
-    <div class="subheader py-4 pt-lg-5 pb-md-4 mb-4 bg-dark">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 align-self-center">
-            <h1 class="text-sans-light mb-0">Bronco Directory</h1>
-          </div>
+  <!-- toolkit styles -->
+  <link rel="stylesheet" href="https://www.scu.edu/assets/public/scu.css" />
+  <link href="/media/scuedu/style-assets/stylesheets/f.css" rel="stylesheet">
+  <!-- /toolkit styles -->
+
+  <script src="https://www.scu.edu/assets/public/scu.js"></script>
+
+
+
+
+
+
+
+
+
+</head>
+<body class="sitemain ">
+  <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5T9KDR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5T9KDR');</script>
+<!-- End Google Tag Manager -->
+
+  <header class="header-legacy bg-light mb-md-5">
+    <div class="container d-flex align-items-center justify-content-center justify-content-lg-between pt-4 pb-4 pb-md-5">
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="seal d-none d-lg-inline mr-3">
+          <i class="icon-scu"></i>
+          <span class="sr-only">Santa Clara University Homepage</span>
+        </a>
+        <div class="text-center text-md-left">
+          <h2 class="text-trajan wordmark m-0">
+            <a href="index.html" class="text-primary">Santa Clara University</a>
+          </h2>
+          <h6 class="text-trajan wordmark m-0">
+            <a href="index.html" class="text-muted">The Jesuit University in Silicon Valley</a>
+          </h6>
         </div>
       </div>
     </div>
+    <nav class="navbar navbar-expand-lg navbar-dark py-0 fixed-top nav-fixed initial nav-brand" id="navbarBrand">
+      <div class="container">
+        <button class="navbar-toggler px-3 py-2" type="button"
+                data-toggle="collapse" data-target="#navbarBrandList"
+                aria-controls="navbarBrandList" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="text-uppercase">menu</span>
+        </button>
+        <div class="collapse navbar-collapse bg-primary" id="navbarBrandList">
+          <ul class="navbar-nav mr-auto px-0 px-lg-2 py-3 py-lg-0">
 
-    <script>
-      $(document).ready(function(){
-        $("header").removeClass("mb-md-5");
-      });
-    </script>
+            <li class="nav-item">
+				<a class="nav-link text-white text-uppercase px-3" href="index.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-white text-uppercase px-3" href="createListing.html">Create Listing</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-white text-uppercase px-3" href="adminLogin.html">Administrator</a>
+			</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
+
+<<<<<<< HEAD
     <!-- <script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
     <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script> -->
 
@@ -466,77 +465,418 @@
       	      $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
           }); -->
           </script>
+=======
+
+
+<div class="subheader py-4 pt-lg-5 pb-md-4 mb-4 bg-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 align-self-center">
+				<h1 class="text-sans-light mb-0">Bronco Directory</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$("header").removeClass("mb-md-5");
+	});
+</script>
+
+
+
+  <div class="container" id="content">
+  	<div class="row">
+    	<div class="col-sm-12">
+
+<script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
+
+<script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script>
+
+<h1>Alumni Info</h1><br />
+<form method="POST">
+  <label class="form_title">Full Name: </label><input type="text" name="aName" /> <br/ >
+  <label class="form_title">Personal Phone #:</label><input type="text" name="pPhone" /><br/ >
+  <label class="form_title">Email:</label><input type="text" name="personalEmail" /><br/ >
+  <label class="form_title">Graduation Year: </label>
+  <select id="gradYear" name="gradYear">
+    <option disabled selected values> -- select on option -- </option>
+  </select><br/ >
+<h2>Business Info</h2><br />
+  <label class="form_title">Business Type:</label>
+  <select name="businessType" >
+    <option disabled selected values> -- select on option -- </option>
+    <option value="automotive">Automotive</option>
+    <option value="catering">Catering</option>
+    <option value="restaurant">Restaurant</option>
+    <option value="retail">Retail</option>
+    <option value="education">Education</option>
+    <option value="electronics">Electronics</option>
+    <option value="entertainment">Entertainment</option>
+    <option value="financial">Financial</option>
+    <option value="Floral">Floral</option>
+    <option value="government">Government</option>
+    <option value="health">Health</option>
+    <option value="home">Home</option>
+    <option value="nonprofit">Nonprofit</option>
+    <option value="services">Services</option>
+    <option value="sports">Sports</option>
+  </select><br />
+  <label class="form_title">Name: </label><input type="text" name="bName" /><br/ >
+  <label class="form_title">Phone #:</label><input type="text" name="bPhone" /><br/ >
+  <label class="form_title">Email:</label><input type="text" name="businessEmail" /><br/ >
+  <label class="form_title">Address Line 1:</label><input type="text" name="addressL1" /><br/ >
+  <label class="form_title">Address Line 2:</label><input type="text" name="addressL2" /><br/ >
+  <label class="form_title">City: </label><input type="text" name="city" /><br/ >
+  <label class="form_title">State:</label>
+  <label class="form_title">Zip Code:</label><input type="text" name="zipCode" /><br/ >
+  <label class="form_title">State:</label><input type="text" name="state" /><br/>
+  <label class="form_title">Country:</label>
+  <select name="country">
+    <option disabled selected values> -- select on option -- </option>
+    <option value="AF">Afghanistan</option>
+    <option value="AX">Åland Islands</option>
+    <option value="AL">Albania</option>
+    <option value="DZ">Algeria</option>
+    <option value="AS">American Samoa</option>
+    <option value="AD">Andorra</option>
+    <option value="AO">Angola</option>
+    <option value="AI">Anguilla</option>
+    <option value="AQ">Antarctica</option>
+    <option value="AG">Antigua and Barbuda</option>
+    <option value="AR">Argentina</option>
+    <option value="AM">Armenia</option>
+    <option value="AW">Aruba</option>
+    <option value="AU">Australia</option>
+    <option value="AT">Austria</option>
+    <option value="AZ">Azerbaijan</option>
+    <option value="BS">Bahamas</option>
+    <option value="BH">Bahrain</option>
+    <option value="BD">Bangladesh</option>
+    <option value="BB">Barbados</option>
+    <option value="BY">Belarus</option>
+    <option value="BE">Belgium</option>
+    <option value="BZ">Belize</option>
+    <option value="BJ">Benin</option>
+    <option value="BM">Bermuda</option>
+    <option value="BT">Bhutan</option>
+    <option value="BO">Bolivia, Plurinational State of</option>
+    <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+    <option value="BA">Bosnia and Herzegovina</option>
+    <option value="BW">Botswana</option>
+    <option value="BV">Bouvet Island</option>
+    <option value="BR">Brazil</option>
+    <option value="IO">British Indian Ocean Territory</option>
+    <option value="BN">Brunei Darussalam</option>
+    <option value="BG">Bulgaria</option>
+    <option value="BF">Burkina Faso</option>
+    <option value="BI">Burundi</option>
+    <option value="KH">Cambodia</option>
+    <option value="CM">Cameroon</option>
+    <option value="CA">Canada</option>
+    <option value="CV">Cape Verde</option>
+    <option value="KY">Cayman Islands</option>
+    <option value="CF">Central African Republic</option>
+    <option value="TD">Chad</option>
+    <option value="CL">Chile</option>
+    <option value="CN">China</option>
+    <option value="CX">Christmas Island</option>
+    <option value="CC">Cocos (Keeling) Islands</option>
+    <option value="CO">Colombia</option>
+    <option value="KM">Comoros</option>
+    <option value="CG">Congo</option>
+    <option value="CD">Congo, the Democratic Republic of the</option>
+    <option value="CK">Cook Islands</option>
+    <option value="CR">Costa Rica</option>
+    <option value="CI">Côte d'Ivoire</option>
+    <option value="HR">Croatia</option>
+    <option value="CU">Cuba</option>
+    <option value="CW">Curaçao</option>
+    <option value="CY">Cyprus</option>
+    <option value="CZ">Czech Republic</option>
+    <option value="DK">Denmark</option>
+    <option value="DJ">Djibouti</option>
+    <option value="DM">Dominica</option>
+    <option value="DO">Dominican Republic</option>
+    <option value="EC">Ecuador</option>
+    <option value="EG">Egypt</option>
+    <option value="SV">El Salvador</option>
+    <option value="GQ">Equatorial Guinea</option>
+    <option value="ER">Eritrea</option>
+    <option value="EE">Estonia</option>
+    <option value="ET">Ethiopia</option>
+    <option value="FK">Falkland Islands (Malvinas)</option>
+    <option value="FO">Faroe Islands</option>
+    <option value="FJ">Fiji</option>
+    <option value="FI">Finland</option>
+    <option value="FR">France</option>
+    <option value="GF">French Guiana</option>
+    <option value="PF">French Polynesia</option>
+    <option value="TF">French Southern Territories</option>
+    <option value="GA">Gabon</option>
+    <option value="GM">Gambia</option>
+    <option value="GE">Georgia</option>
+    <option value="DE">Germany</option>
+    <option value="GH">Ghana</option>
+    <option value="GI">Gibraltar</option>
+    <option value="GR">Greece</option>
+    <option value="GL">Greenland</option>
+    <option value="GD">Grenada</option>
+    <option value="GP">Guadeloupe</option>
+    <option value="GU">Guam</option>
+    <option value="GT">Guatemala</option>
+    <option value="GG">Guernsey</option>
+    <option value="GN">Guinea</option>
+    <option value="GW">Guinea-Bissau</option>
+    <option value="GY">Guyana</option>
+    <option value="HT">Haiti</option>
+    <option value="HM">Heard Island and McDonald Islands</option>
+    <option value="VA">Holy See (Vatican City State)</option>
+    <option value="HN">Honduras</option>
+    <option value="HK">Hong Kong</option>
+    <option value="HU">Hungary</option>
+    <option value="IS">Iceland</option>
+    <option value="IN">India</option>
+    <option value="ID">Indonesia</option>
+    <option value="IR">Iran, Islamic Republic of</option>
+    <option value="IQ">Iraq</option>
+    <option value="IE">Ireland</option>
+    <option value="IM">Isle of Man</option>
+    <option value="IL">Israel</option>
+    <option value="IT">Italy</option>
+    <option value="JM">Jamaica</option>
+    <option value="JP">Japan</option>
+    <option value="JE">Jersey</option>
+    <option value="JO">Jordan</option>
+    <option value="KZ">Kazakhstan</option>
+    <option value="KE">Kenya</option>
+    <option value="KI">Kiribati</option>
+    <option value="KP">Korea, Democratic People's Republic of</option>
+    <option value="KR">Korea, Republic of</option>
+    <option value="KW">Kuwait</option>
+    <option value="KG">Kyrgyzstan</option>
+    <option value="LA">Lao People's Democratic Republic</option>
+    <option value="LV">Latvia</option>
+    <option value="LB">Lebanon</option>
+    <option value="LS">Lesotho</option>
+    <option value="LR">Liberia</option>
+    <option value="LY">Libya</option>
+    <option value="LI">Liechtenstein</option>
+    <option value="LT">Lithuania</option>
+    <option value="LU">Luxembourg</option>
+    <option value="MO">Macao</option>
+    <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+    <option value="MG">Madagascar</option>
+    <option value="MW">Malawi</option>
+    <option value="MY">Malaysia</option>
+    <option value="MV">Maldives</option>
+    <option value="ML">Mali</option>
+    <option value="MT">Malta</option>
+    <option value="MH">Marshall Islands</option>
+    <option value="MQ">Martinique</option>
+    <option value="MR">Mauritania</option>
+    <option value="MU">Mauritius</option>
+    <option value="YT">Mayotte</option>
+    <option value="MX">Mexico</option>
+    <option value="FM">Micronesia, Federated States of</option>
+    <option value="MD">Moldova, Republic of</option>
+    <option value="MC">Monaco</option>
+    <option value="MN">Mongolia</option>
+    <option value="ME">Montenegro</option>
+    <option value="MS">Montserrat</option>
+    <option value="MA">Morocco</option>
+    <option value="MZ">Mozambique</option>
+    <option value="MM">Myanmar</option>
+    <option value="NA">Namibia</option>
+    <option value="NR">Nauru</option>
+    <option value="NP">Nepal</option>
+    <option value="NL">Netherlands</option>
+    <option value="NC">New Caledonia</option>
+    <option value="NZ">New Zealand</option>
+    <option value="NI">Nicaragua</option>
+    <option value="NE">Niger</option>
+    <option value="NG">Nigeria</option>
+    <option value="NU">Niue</option>
+    <option value="NF">Norfolk Island</option>
+    <option value="MP">Northern Mariana Islands</option>
+    <option value="NO">Norway</option>
+    <option value="OM">Oman</option>
+    <option value="PK">Pakistan</option>
+    <option value="PW">Palau</option>
+    <option value="PS">Palestinian Territory, Occupied</option>
+    <option value="PA">Panama</option>
+    <option value="PG">Papua New Guinea</option>
+    <option value="PY">Paraguay</option>
+    <option value="PE">Peru</option>
+    <option value="PH">Philippines</option>
+    <option value="PN">Pitcairn</option>
+    <option value="PL">Poland</option>
+    <option value="PT">Portugal</option>
+    <option value="PR">Puerto Rico</option>
+    <option value="QA">Qatar</option>
+    <option value="RE">Réunion</option>
+    <option value="RO">Romania</option>
+    <option value="RU">Russian Federation</option>
+    <option value="RW">Rwanda</option>
+    <option value="BL">Saint Barthélemy</option>
+    <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+    <option value="KN">Saint Kitts and Nevis</option>
+    <option value="LC">Saint Lucia</option>
+    <option value="MF">Saint Martin (French part)</option>
+    <option value="PM">Saint Pierre and Miquelon</option>
+    <option value="VC">Saint Vincent and the Grenadines</option>
+    <option value="WS">Samoa</option>
+    <option value="SM">San Marino</option>
+    <option value="ST">Sao Tome and Principe</option>
+    <option value="SA">Saudi Arabia</option>
+    <option value="SN">Senegal</option>
+    <option value="RS">Serbia</option>
+    <option value="SC">Seychelles</option>
+    <option value="SL">Sierra Leone</option>
+    <option value="SG">Singapore</option>
+    <option value="SX">Sint Maarten (Dutch part)</option>
+    <option value="SK">Slovakia</option>
+    <option value="SI">Slovenia</option>
+    <option value="SB">Solomon Islands</option>
+    <option value="SO">Somalia</option>
+    <option value="ZA">South Africa</option>
+    <option value="GS">South Georgia and the South Sandwich Islands</option>
+    <option value="SS">South Sudan</option>
+    <option value="ES">Spain</option>
+    <option value="LK">Sri Lanka</option>
+    <option value="SD">Sudan</option>
+    <option value="SR">Suriname</option>
+    <option value="SJ">Svalbard and Jan Mayen</option>
+    <option value="SZ">Swaziland</option>
+    <option value="SE">Sweden</option>
+    <option value="CH">Switzerland</option>
+    <option value="SY">Syrian Arab Republic</option>
+    <option value="TW">Taiwan, Province of China</option>
+    <option value="TJ">Tajikistan</option>
+    <option value="TZ">Tanzania, United Republic of</option>
+    <option value="TH">Thailand</option>
+    <option value="TL">Timor-Leste</option>
+    <option value="TG">Togo</option>
+    <option value="TK">Tokelau</option>
+    <option value="TO">Tonga</option>
+    <option value="TT">Trinidad and Tobago</option>
+    <option value="TN">Tunisia</option>
+    <option value="TR">Turkey</option>
+    <option value="TM">Turkmenistan</option>
+    <option value="TC">Turks and Caicos Islands</option>
+    <option value="TV">Tuvalu</option>
+    <option value="UG">Uganda</option>
+    <option value="UA">Ukraine</option>
+    <option value="AE">United Arab Emirates</option>
+    <option value="GB">United Kingdom</option>
+    <option value="US">United States</option>
+    <option value="UM">United States Minor Outlying Islands</option>
+    <option value="UY">Uruguay</option>
+    <option value="UZ">Uzbekistan</option>
+    <option value="VU">Vanuatu</option>
+    <option value="VE">Venezuela, Bolivarian Republic of</option>
+    <option value="VN">Viet Nam</option>
+    <option value="VG">Virgin Islands, British</option>
+    <option value="VI">Virgin Islands, U.S.</option>
+    <option value="WF">Wallis and Futuna</option>
+    <option value="EH">Western Sahara</option>
+    <option value="YE">Yemen</option>
+    <option value="ZM">Zambia</option>
+    <option value="ZW">Zimbabwe</option>
+  </select><br />
+  <label class="form_title">Description: </label><textarea rows="8" cols="80" name="bDescription" form="usrform" placeholder="Type business description here..."></textarea><br />
+  <label class= "form_title2">Upload your <br />business image:</label>
+  <input type="file" name="bImage" accept="image/*" /><br />
+  <input type="submit" value="Submit">
+</form>
+<style>
+label[class="form_title"]{
+  width: 150px;
+  vertical-align: top;
+}
+label[class="form_title2"]{
+  width: 150px;
+  vertical-align: bottom;
+}
+input[type="text"]{
+  margin-bottom: 20px;
+
+}
+
+</style>
+<script>
+  var max = new Date().getFullYear(),
+    min = max - 100,
+    select = document.getElementById('gradYear');
+
+for (var i = max; i>=min; i--){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+</script>
+<?php
+  include 'toolbox.php';
+  createListing();
+?>
+
+  <script>
+	$(document).ready(function() {
+    	$('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
+
+    });
+</script>
+
+>>>>>>> parent of 1b4ee47... changes to all files
         </div>
-      </div>
+       </div>
     </div>
 
 
-    <footer class="footer-core border-top bg-white pt-4 footer-core">
-    	<div class="container">
-    		<a href="/" class="h4 text-dark text-uppercase wordmark d-block mb-4">Santa Clara University</a>
-    		<div class="row">
-    			<div class="col-12 col-md-6">
-    				<p class="mb-0">500 El Camino Real<br>Santa Clara, CA 95053<br>(408) 554-4000</p>
-            <ul class="list-unstyled list-spaced">
-              <li><a href="https://www.scu.edu/map/">Maps &amp; Directions</a></li>
-              <li><a href="https://phonebook.scu.edu/">Contact Us</a></li>
-            </ul>
-    				<ul class="list-inline mb-0 footer-social-icons">
-    					<li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/SantaClaraUniversity">
-    					<i class="demo-icon icon-facebook-squared"></i>
-    					<span class="sr-only">SCU on Facebook</span>
-    					</a></li>
-    					<li class="list-inline-item"><a class="twitter" href="https://twitter.com/SantaClaraUniv">
-    					<i class="demo-icon icon-twitter"></i>
-    					<span class="sr-only">SCU on Twitter</span>
-    					</a></li>
-    					<li class="list-inline-item"><a class="linkedin" href="https://www.linkedin.com/edu/santa-clara-university-17914">
-    					<i class="demo-icon icon-linkedin"></i>
-    					<span class="sr-only">SCU on Linkedin</span>
-    					</a></li>
-    					<li class="list-inline-item"><a class="youtube" href="https://www.youtube.com/channel/UCsii-lMGVZ5tL3lj2No6i7A?sub_confirmation=1">
-    					<i class="demo-icon icon-youtube"></i>
-    					<span class="sr-only">SCU on YouTube</span>
-    					</a></li>
-    					<li class="list-inline-item"><a class="instagram" href="https://instagram.com/santaclarauniversity/">
-    					<i class="demo-icon icon-instagram"></i>
-    					<span class="sr-only">SCU on Instagram</span>
-    					</a></li>
-    				</ul>
-            <hr class="d-block d-md-none pt-2">
-    			</div>
-
-    			<div class="col-12 col-md-3">
-      			<ul class="list-unstyled list-spaced">
-              <li><h6 class="text-uppercase">Resources</h6></li>
-              <li><a title="Home &raquo; Home &raquo; Emergency" href="/emergency/">Emergency Info</a></li>
-              <li><a title="Home &raquo; Home &raquo; Human Resources &raquo; Careers" href="/hr/careers/">Careers</a></li>
-              <li><a href="https://www.scu.edu/login">Login</a></li>
-              <li><span class="fa fa-universal-access text-primary"><span class="sr-only">Accessiblity icon</span></span> <a title="Home &raquo; Home &raquo; Accessibility" href="/accessibility/">Accessibility</a></li>
-            </ul>
-    		  </div>
-
-    			<div class="col-12 col-md-3">
-      			<ul class="list-unstyled list-spaced">
-              <li><h6 class="text-uppercase ">Our Campus</h6></li>
-              <li><a title="Home &raquo; Home &raquo; Mission Santa Clara de As&iacute;s" href="/missionchurch/">The Mission</a></li>
-              <li><a title="Home &raquo; Home &raquo; Event Calendar" href="/events/">Event Calendar</a></li>
-              <li><a title="Home &raquo; Home &raquo; News &amp; Events" href="/news-and-events/">News</a></li>
-            </ul>
-    			</div>
-    		</div>
-    	</div>
-
-    	<p class="bg-gradient-primary mb-0 mt-4 p-3 small text-center">&copy; 2018 Santa Clara University</p>
-
-    </footer>
-
-    <script>
-      $(document).ready(function() {
-        $("#toplink1340").addClass("active");
-        $("#toplink1127").addClass("active");
-      });
-    </script>
+<footer class="footer-core border-top bg-white pt-4 footer-core">
+	<div class="container">
+		<a href="/" class="h4 text-dark text-uppercase wordmark d-block mb-4">Santa Clara University</a>
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<p class="mb-0">500 El Camino Real<br>Santa Clara, CA 95053<br>(408) 554-4000</p>
+<ul class="list-unstyled list-spaced">
+<li><a href="https://www.scu.edu/map/">Maps &amp; Directions</a></li>
+<li><a href="https://phonebook.scu.edu/">Contact Us</a></li>
+</ul>
+				<ul class="list-inline mb-0 footer-social-icons">
+					<li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/SantaClaraUniversity">
+					<i class="demo-icon icon-facebook-squared"></i>
+					<span class="sr-only">SCU on Facebook</span>
+					</a></li>
+					<li class="list-inline-item"><a class="twitter" href="https://twitter.com/SantaClaraUniv">
+					<i class="demo-icon icon-twitter"></i>
+					<span class="sr-only">SCU on Twitter</span>
+					</a></li>
+					<li class="list-inline-item"><a class="linkedin" href="https://www.linkedin.com/edu/santa-clara-university-17914">
+					<i class="demo-icon icon-linkedin"></i>
+					<span class="sr-only">SCU on Linkedin</span>
+					</a></li>
+					<li class="list-inline-item"><a class="youtube" href="https://www.youtube.com/channel/UCsii-lMGVZ5tL3lj2No6i7A?sub_confirmation=1">
+					<i class="demo-icon icon-youtube"></i>
+					<span class="sr-only">SCU on YouTube</span>
+					</a></li>
+					<li class="list-inline-item"><a class="instagram" href="https://instagram.com/santaclarauniversity/">
+					<i class="demo-icon icon-instagram"></i>
+					<span class="sr-only">SCU on Instagram</span>
+					</a></li>
+				</ul>
+			<hr class="d-block d-md-none pt-2">
+			</div>
+		</div>
+	</div>
+	<p class="bg-gradient-primary mb-0 mt-4 p-3 small text-center">&copy; 2018 Santa Clara University</p>
+</footer>
+    <script> $(document).ready(function() {
+		$("#toplink1340").addClass("active");
+		$("#toplink1127").addClass("active");
+});</script>
 
     <script>
       $(document).ready(function() {
@@ -547,5 +887,8 @@
       });
     </script>
 
-  </body>
+
+
+
+   </body>
 </html>
