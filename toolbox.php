@@ -37,27 +37,27 @@ function searchSQL($fields){
 	//	 Parse the SQL query
     $first = true;
 
-    $search = 'SELECT businessName, phoneNo, city, type FROM ((Businesses Natural Join Verified) NATURAL JOIN Addresses)';
+    $search = 'SELECT businessName, phoneNo, city, type FROM Businesses NATURAL JOIN Verified';
 
 
     if($fields[0] != '' OR $fields[1] != 'all' OR $fields[2] != ''){
         $search .= ' WHERE ';
         if($fields[0] != ''){
-            $search .= ' lower(:busname) = lower(businessName)';
+            $search .= ' lower(:busname) = lower(businesses.businessName)';
             $first = false;
         }
         if($fields[1] != 'all'){
             if(!$first){
                 $search .= ' AND';
             }
-            $search .= ' lower(:busType) = lower(type)';
+            $search .= ' lower(:busType) = lower(businesses.type)';
             $first = false;
         }
         if($fields[2] != ''){
             if(!$first){
                 $search .= ' AND';
             }
-            $search .= ' lower(:city) = lower(city)';
+            $search .= ' lower(:city) = lower(businesses.city)';
             $first = false;
         }
     }
@@ -102,9 +102,9 @@ function viewCurrent(){
 	oci_execute($query);
 	// Prepare to display results
     echo "<br>";
-	while (($row = oci_fetch_array($query, OCI_BOTH)) != false){
+	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
 	    // Use the uppercase column names for the associative array indices
-        echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3]."</b><br>";
+        echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3].",".$row[4]."</b><br>";
 	}
 	// Log off
 	OCILogoff($conn);
@@ -232,7 +232,7 @@ function verifySQL($input){
         exit;
 	}
 	//	 Parse the SQL query
-	$query = oci_parse($conn, 'BEGIN VERIFYbusiness(TO_NUMBER(:businessID));END;');//'INSERT INTO VERIFIED VALUES(TO_NUMBER(:businessID))');
+	$query = oci_parse($conn, 'INSERT INTO VERIFIED VALUES(TO_NUMBER(:businessID))');
 
     oci_bind_by_name($query, ':businessID',$input);
 	// Execute the query

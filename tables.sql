@@ -78,12 +78,10 @@ END;
 /
 show errors;
 
-CREATE OR REPLACE PROCEDURE VERIFYbusiness(abusinessID IN NUMBER)
+CREATE OR REPLACE PROCEDURE VERIFYbusiness(businessID IN NUMBER, alumID IN NUMBER)
 AS
-  tempAlumID  NUMBER(5);
 BEGIN
-  SELECT alumID INTO tempAlumID FROM BUSINESSES WHERE Businesses.BusinessID = aBusinessID;
-  INSERT INTO Verified VALUES (abusinessID, tempAlumID);
+  INSERT INTO Verified VALUES (businessID, alumID);
 END;
 /
 show errors;
