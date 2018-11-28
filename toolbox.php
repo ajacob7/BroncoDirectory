@@ -1,8 +1,8 @@
 <?php
-//SUPER helpful link
-//https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/11g/r2/prod/appdev/opensrclang/php/php.htm
-//include "database.php";
 
+//Parameters: None
+//Parses ini file to gain access to the oracle database
+//Outputs: returns a connection to the DBMS
 function connectToDB(){
 	$cfg = parse_ini_file('setup.ini');
     $conn=oci_connect($cfg['db_user'], $cfg['db_pass'], $cfg['db_path']);
@@ -12,6 +12,10 @@ function connectToDB(){
     }
     return $conn;
  }
+
+ //Parameters: none
+ //pulls the form information from the searchbar, and formats the data before sending to the database
+ //Outputs: none
 function searchBar(){
 	//connect to your database
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,8 +23,8 @@ function searchBar(){
 		$fields = array($search = $_POST['search'],
 			$type = $_POST['businesstype'],
 			$city = $_POST['city']);
-		#check if empty
-		foreach ($fields as $item) {
+		
+        foreach ($fields as $item) {
 			prepareInput($item);
 		}
 		searchSQL($fields);
@@ -28,13 +32,14 @@ function searchBar(){
 
 	return;
 }
+
+//Parameters: array of search input fields
+//Established connection to database, Builds the query statement to filter results, executes search, and outputs results
+//Output: none
 function searchSQL($fields){
 	$conn=connectToDB();
-	if(!$conn) {
-	     print "<br> connection failed:";
-        exit;
-	}
-	//	 Parse the SQL query
+	
+    //	 Parse the SQL query
     $first = true;
 
     $search = 'SELECT businessName, phoneNo, city, type, businessId FROM ((Businesses Natural Join Verified) NATURAL JOIN Addresses)';
@@ -60,12 +65,7 @@ function searchSQL($fields){
             $search .= ' lower(:city) = lower(city)';
             $first = false;
         }
-    }
-
-    //echo "<br>QUERY:".$search."<br>";
-    //foreach($fields as $item){
-    //    echo $item."<br>";
-    //}
+    } 
 
     $query = oci_parse($conn, $search);
 
@@ -85,13 +85,16 @@ function searchSQL($fields){
     echo "<br>Business &emsp;/ &emsp; City &emsp;/ &emsp; Type";
 	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
 	    // Use the uppercase column names for the associative array indices
-    //echo "<br><b>".$row[0].",".$row[1].",".$row[2].",".$row[3]."</b><br>";i
         echo "<br>".'<a href="businessDetails.html?id='.urlencode($row[4]).'">'.$row[0]."&emsp;/&emsp;".$row[2]."&emsp;/&emsp;".$row[3].'</a>';
     }
 
     oci_free_statement($query);
 	oci_close($conn);
 }
+
+//Parameters: businessID
+//Uses a businessID to query information for the business
+//Output: returns an array containing the business information
 function getDetails($busID){
     $conn = connectToDB();
     
@@ -103,6 +106,9 @@ function getDetails($busID){
 
     return $row;
 }
+//Parameters: businessID to locate the corresponding security check info
+//Queries the database for security check information used in editing posts
+//Outputs: returns an array containing the security question, answer, and businessID
 function retrieveSecurityCheck($busID){
     $conn = connectToDB();
             
@@ -115,6 +121,9 @@ function retrieveSecurityCheck($busID){
     return $row;
 
 }
+//Parameters: none
+//conducts a query search to display the current verified Businesses in the directory
+//OUtput: none
 function viewCurrent(){
     $conn = connectToDB();
 	if(!$conn) {
@@ -135,6 +144,9 @@ function viewCurrent(){
 	OCILogoff($conn);
 
 }
+//Parameters: none
+//conducts a query search to display all pending businesses
+//Output: none
 function viewQueue(){
 	$conn=connectToDB();
 	if(!$conn) {
@@ -155,7 +167,9 @@ function viewQueue(){
 	// Log off
 	OCILogoff($conn);
 }
-
+//Parameters: none
+//Gathers and prepares the input fields from _POST on the create listing page
+//Output: an array containing the input data fields to create listing 
 function createListing(){
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    # collect input data
@@ -178,26 +192,20 @@ function createListing(){
 			$description = $_POST['bDescription'],
             //$image = file_get_contents($_FILES['bImage']['tmp_name']),
             $website = $_POST['website']);
-		#check if empty
-		//if(checkFill($fields)){
-			foreach ($fields as $item) {
+			
+            foreach ($fields as $item) {
 				prepareInput($item);
 			}
 			insertSQL($fields);
-		/*}
-		else{
-			echo "Did not complete required fields <br>";
-		}*/
 	}
 }
+//Parameters: an array containing the information used to create a business
+//constructs the query instruction to insert data into the database
+//Outputs: none
 function insertSQL($fields){
 	//connect to your database
 	$conn=connectToDB();
-	if(!$conn) {
-	     print "<br> connection failed:";
-        exit;
-	}
-	//	 Parse the SQL query
+	//Parse the SQL query
 	$query = oci_parse($conn, 'BEGIN INSERTpro(:aName, :pPhone, :personalEmail, :gradYear, :securityQuestion, :SQAnswer, :businessType, :bName, :bPhone, :businessEmail, :addressL1, :addressL2, :city, :zipCode, :state, :country, :bDescription, :website);END;');
 
     //$blob = oci_new_descriptor($conn, OCI_D_LOB);
@@ -237,6 +245,8 @@ function insertSQL($fields){
     oci_close($conn);
 
 }
+//Parameters: none
+//Gets the business ID of the business to be verified 
 
 function verifyListing(){
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['Verify'])) {
@@ -245,37 +255,22 @@ function verifyListing(){
         if(!empty($busID)){
             prepareInput($busID);
             $busID = (int)$busID;
-            verifySQL($busID);
+            //connect to your database
+	        $conn=connectToDB();
+	        //Parse the SQL query
+	        $query = oci_parse($conn, 'BEGIN VERIFYbusiness(TO_NUMBER(:businessID));END;');//'INSERT INTO VERIFIED VALUES(TO_NUMBER(:businessID))');
+
+            oci_bind_by_name($query, ':businessID',$input);
+	        // Execute the query
+	        oci_execute($query);
+	        oci_free_statement($query);
+	        oci_close($conn);
         }
     }
 }
-function verifySQL($input){
-    //connect to your database
-	$conn=connectToDB();
-	if(!$conn) {
-	     print "<br> connection failed:";
-        exit;
-	}
-	//	 Parse the SQL query
-	$query = oci_parse($conn, 'BEGIN VERIFYbusiness(TO_NUMBER(:businessID));END;');//'INSERT INTO VERIFIED VALUES(TO_NUMBER(:businessID))');
-
-    oci_bind_by_name($query, ':businessID',$input);
-	// Execute the query
-	oci_execute($query);
-	oci_free_statement($query);
-	oci_close($conn);
-}
-
-
-function checkFill($array){
-	foreach($array as $item){
-		if(empty($item)){
-			return false;
-		}
-	}
-	return True;
-}
-
+//Parameters: input data from the forms of the webpages
+//trims excess whitespace and specialchars from the data
+//Output: the cleaned up data
 function prepareInput($inputData){
 	// Removes any leading or trailing white space
 	$inputData = trim($inputData);
