@@ -125,7 +125,7 @@
     	<div class="col-sm-12">
 
 Pending:<br /><br />
-
+<!-- will display business submissions that are currently pending approval -->
 <?php
   include 'toolbox.php';
   verifyListing();
@@ -133,6 +133,7 @@ Pending:<br /><br />
 ?>
 <br /><br />
 <form method="POST">
+  <!-- admin enters business ID associated with business submission to very business and post -->
   <label>Enter the business ID that you want to verify and post: <input type="number" name="businessID" /></label> <br/ >
   <input type="submit" name="Verify" value="Verify" />
 </form>
