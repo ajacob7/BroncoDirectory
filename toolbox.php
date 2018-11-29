@@ -82,10 +82,10 @@ function searchSQL($fields){
 	// Execute the query
 	oci_execute($query);
 	// Prepare to display results
-    echo "<br>Business &emsp;/ &emsp; City &emsp;/ &emsp; Type";
+    echo "<br>Business &emsp;| &emsp; City &emsp;| &emsp; Type";
 	while (($row = oci_fetch_array($query, OCI_BOTH)) != false) {
 	    // Use the uppercase column names for the associative array indices
-        echo "<br>".'<a href="businessDetails.html?id='.urlencode($row[4]).'">'.$row[0]."&emsp;/&emsp;".$row[2]."&emsp;/&emsp;".$row[3].'</a>';
+        echo "<br>".'<a href="businessDetails.html?id='.urlencode($row[4]).'">'.$row[0]."&emsp;|&emsp;".$row[2]."&emsp;|&emsp;".$row[3].'</a>';
     }
 
     oci_free_statement($query);
@@ -260,7 +260,7 @@ function verifyListing(){
 	        //Parse the SQL query
 	        $query = oci_parse($conn, 'BEGIN VERIFYbusiness(TO_NUMBER(:businessID));END;');//'INSERT INTO VERIFIED VALUES(TO_NUMBER(:businessID))');
 
-            oci_bind_by_name($query, ':businessID',$input);
+            oci_bind_by_name($query, ':businessID',$busID);
 	        // Execute the query
 	        oci_execute($query);
 	        oci_free_statement($query);
