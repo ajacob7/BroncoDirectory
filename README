@@ -1,0 +1,32 @@
+Installation Steps:
+
+1. Copy the unzipped BroncoDirectory folder into the /webpages/<username>/ folder on the scu linux machine. 
+(Note: replace <username> with your username without the angle brackets)
+
+2. While in the /webpages/<username>/ folder outside of the BroncoDirectory folder, 
+enter: "chmod 715 BroncoDirectory/*" without quotes into the terminal and press enter to execute files
+on scu server and protect the files from being accessed by other users.
+
+3.  Enter the BroncoDirectory folder and enter : "vi setup.ini" in the terminal without quotes to open 
+	the file. In this file, you will see:
+							db_user = username
+							db_pass = password
+	Here, you will edit the file and replace username with your oracle username and password with your
+	oracle password and then save and exit. This will allow you to login to your database on the oracle.
+
+4.  Also in the BroncoDirectory folder, enter "vi .htaccess in the terminal and add this line: 
+	"AddType application/x-httpd-php .html .htm"
+
+5. 	Next, while inside the BroncoDirectory folder, you will enter: "setup oracle" in the terminal without quotes to setup up the oracle.
+	Afterwards, enter: "sqlplus username@db11g" into the terminal without quotes and replace username with
+	 your linux username. You will be prompted to enter your password for oracle and after doing so will log 
+	 in successfully. After logging in successfully, enter: "start tables.sql" without quotes to start the tables.
+	 It should say procedure successfully completed, in which you will then enter exit into terminal to exit oracle.
+	 (Warning: It is vital to exit oracle to ensure proper functionality of the database)
+
+6.	Now the web application should be up and running. To access the website, simply copy and paste the following address in your desired
+	internet browser and replace username with your username.
+
+			Address: 
+
+			http://students.engr.scu.edu/~username/BroncoDirectory/index.html 
