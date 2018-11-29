@@ -1,4 +1,14 @@
+<!--
+    File:        securityCheck.html
 
+    Description: This file displays the security question associated with the businesses
+                 post that the individual wants to edit and provides a text box form
+                 for the individual to submit the answer to the question. If the answer
+                 matches the original answer used when the post was created, the user
+                 will be redirected to a page to edit the post and submit for reviewal.
+
+   Disclaimer    *file uses some pre-existing SCU website framework*
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,7 +59,7 @@
     include 'toolbox.php';
     $busID = $_GET['id'];
     $info = retrieveSecurityCheck($busID);
-        
+
   ?>
   <body class="sitemain ">
     <header class="header-legacy bg-light mb-md-5">
@@ -126,14 +136,6 @@
             }
           </style>
         </div>
-
-        <!-- <script>$(document).ready(function() { $('.page-title').addClass('sr-only');$('#page-title').addClass('sr-only');});</script>
-        <script>$(document).ready(function() { $('ol.breadcrumb').hide();});</script>
-        <script> -->
-        <!-- $(document).ready(function() {
-          $('nav.side-navigation .side-navigation-header').hide();$('.sidebar-title').hide();
-        });
-        </script> -->
       </div>
     </div>
 
